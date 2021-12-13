@@ -1,0 +1,82 @@
+\chapter{Konventionen und Beispiele}
+Es folgen ein paar nützliche Beispiele und Konventionen.
+
+\section{Gleichungen} \label{sec:gleichungen}
+Bei umfangreichen Dokumenten sollte eine Gleichung, wie
+%
+\begin{equation} \label{equ:systemmatrix}
+	\mathbf{A}_\mathrm{s} = \begin{bmatrix}1 & 0 \\ 0 & 2\end{bmatrix}
+\end{equation}
+%
+nur eine Nummer bekommen, wenn sie, wie Gleichung~\eqref{equ:systemmatrix}, im Text referenziert wird. Die Nummerierung von Umgebungen kann über den * gesteuert werden.
+% Absätze vor und nach Gleichungen vermeiden, um das Dokuemnt nicht unnötig auseinanderzuzerren
+
+Gleichungen sind Teil des Satzes und bekommen deshalb auch Satzzeichen, wie beispielsweise die wahllosen Werte
+%
+\begin{align}
+	\beta &= 5^{\circ}, \nonumber  \\
+	c &= 42 \label{equ:antwort} 
+\end{align}
+%
+und
+\begin{equation*}
+	\dot{\hat{x}} = 7 \, \mathrm{\frac{m}{s}}.
+\end{equation*}
+Wie an Gleichung~\eqref{equ:antwort} zu sehen, können mehrere Gleichungen im Block ausgerichtet und einzeln nummeriert und referenziert werden.
+
+\section{Bilder und Tabellen}
+Außer bei Fotos sollte auf Pixelgrafiken verzichtet werden. Vektorgrafiken können beispielsweise als PDF eingebunden werden, wie Abbildung~\ref{fig:rtm}, oder direkt mit TikZ erstellt werden.
+
+\begin{figure} %[h] die Figure-Umgebung bietet eine Option zur Steuerung der Platzierung
+	\centering
+	\includegraphics[width=0.4\textwidth]{rtm_mit_schrift.pdf}
+	\caption{Regelungstechnik und Mechatronik}
+	\label{fig:rtm}
+\end{figure}
+
+Wie in Tabelle~\ref{tab:tabelle} zu sehen, bekommen Tabellen eine Überschrift.
+%
+\begin{table}
+	\centering
+	\caption{Tabellenüberschrift}	
+	\begin{tabular}{r|cc}
+		& A & B \\
+		\hline
+		C & 1 & 2 \\
+		D & 3 & 4 \\
+	\end{tabular}
+	\label{tab:tabelle}
+\end{table}
+%
+
+\section{Blockschaltbilder}
+Blockschaltbilder können mit der im Hauptdokument eingebundenen TikZ-Bibliothek erstellt werden.
+%
+\begin{center} % wird von LaTex nicht frei am Seitenanfang/Ende platziert. Im Normalfall aber besser figure nutzen.
+%	\centering
+	\input{Bilder/BSB_Beispiel.tikz}
+	\captionof{figure}{TikZ Blockschaltbild in Figure-Umgebung}
+	\label{fig:bsb_beispiel}
+\end{center}
+
+Variablen, wie $w$ aus Abbildung~\ref{fig:bsb_beispiel}, kommen auch im Fließtext immer in eine Mathe-Umgebung.
+
+\section{Plots}
+Plots können direkt in \LaTeX mit dem Paket \texttt{pgfplots} sogar mit der TU-Farbpalette gesetzt werden.
+In Abbildung~\ref{fig:step_pt2} wird z.B. die rtm-Farbe \textcolor{TUDa-2c}{\texttt{TUDa-2c}} genutzt.
+
+Aus Matlab heraus können Plots z.B. mit dem Tool \texttt{matlab2tikz} für \LaTeX{} exportiert werden.
+Der mitgelieferte \texttt{cleanfigure()}-Befehl räumt Plots vor dem Export auf und sorgt für eine kleine Dateigröße.
+Mit \texttt{pgfplots} kann aber auch direkt in \LaTeX analytische Funktionen plotten: 
+\tikz{	
+	\begin{axis}[hide axis, height=18mm, width=5cm]
+		\addplot[domain=-2*pi:2*pi, samples=100]{cos(deg(x))};
+	\end{axis}
+}.
+
+\begin{figure}
+	\centering
+	\input{Bilder/Plot_Sprungantwort.tikz}
+	\caption{Sprungantwort $\mathrm{PT}_2$}
+	\label{fig:step_pt2}
+\end{figure}

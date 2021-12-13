@@ -1,0 +1,92 @@
+\documentclass[
+	ngerman,
+	ruledheaders=section,%Ebene bis zu der die Überschriften mit Linien abgetrennt werden, vgl. DEMO-TUDaPub
+	class=report,% Basisdokumentenklasse. Wählt die Korrespondierende KOMA-Script Klasse
+	thesis={type=master},% Dokumententyp Thesis
+	accentcolor=2c, % Akzentfarbe FG rtm
+	custommargins=false,
+	marginpar=false,
+	BCOR=10mm, % Bindekorrektur (etwas größere mittlere Ränder)
+	parskip=half-, % Absatzkennzeichnung durch Abstand vgl. KOMA-Sript
+	fontsize=11pt, % Basisschriftgröße laut Corporate Design ist mit 9pt häufig zu klein
+  	twoside,
+  	numbers=noendperiod,
+  	fleqn,
+  	captions=oneline, % Einzeilige Captions zentrieren
+	captions=tableheading, % Für besseren Abstand bei TabellenÜBERschriften
+  	IMRAD=false,
+]{tudapub}
+
+
+%%%%%%%%%%%%%%%%%%%
+%Pakete einbinden
+%%%%%%%%%%%%%%%%%%%
+\input{./common/packages/packages.tex}
+
+%%%%%%%%%%%%%%%%%%%
+%Meine Makros einbinden
+%%%%%%%%%%%%%%%%%%%
+\input{./common/macros/mymacros.tex}
+
+%%%%%%%%%%%%%%%%%%%
+%Literaturverzeichnis
+%%%%%%%%%%%%%%%%%%%
+\catcode30=12  % Workaround for current biblatex problem (https://tex.stackexchange.com/questions/564990/error-after-miktex-reinstall-text-line-contains-an-invalid-character)
+\usepackage[backend=biber,style=ieee,bibencoding=utf8]{biblatex}
+\addbibresource{./Bib/literature.bib}
+
+% ======================================================
+% Fix für Fehlermeldungen 'Undifined control sequence' und 'Missing number, treated as zero.' bei gestapelten Akzenten in der Mathe-Umgebung. (z.B. \dot{\hat{x}})
+% Der Fehler tritt auf bei tuda-ci v3.10 (Feb. 2021) in Kombination mit dem amsmath package.
+%
+% BITTE PRÜFEN, OB DER FEHLER NOCH BESTEHT UND DEN WORKAROUND GGF. WIEDER ENTFERNEN
+%
+% workaround/solution by skillmon posted here
+% https://tex.stackexchange.com/questions/482281/math-accent-symbol-over-parentheses-enclosing-accented-symbol-amsmath
+\makeatletter
+\protected\def\mathaccentV#1#2#3#4#5%
+  {%
+    \ifmmode
+      \mathaccentV@do{#2}{#3}{#4}{#5}%
+    \else
+      \@xp\nonmatherr@\csname #1\endcsname
+    \fi
+  }
+\def\mathaccentV@do#1#2#3#4%
+  {%
+    \global\let\macc@nucleus\@empty
+    \mathaccent"\accentclass@#1#2#3{#4}\macc@nucleus
+  }
+\makeatother
+% ======================================================
+
+\begin{document}
+% =================================================================================
+% Header mit allen Metadaten etc. 
+% =================================================================================
+\input{common/Header/Header.tex}
+
+% =================================================================================
+% Kapitel und Sections etc.
+% =================================================================================
+\input{Inhalt/Minimalbeispiele.tex}
+
+
+% =================================================================================
+% Anhang
+% =================================================================================
+\appendix % Damit wird der Anhang begonnen. Die Kapitel werden ab jetzt mit Buchstaben nummeriert
+
+
+% =================================================================================
+% Literaturverzeichnis
+% =================================================================================
+\cleardoublepage        % Auf eine leere Seite einfügen
+\phantomsection         % Für Aufnahme ins Inhaltsverzeichnis
+\addcontentsline{toc}{chapter}{\bibname}  % In Inhaltsverzeichnis von
+                                          % Dokument und pdf aufnehmen
+\printbibliography 
+% =================================================================================
+
+	
+\end{document}
