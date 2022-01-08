@@ -1,0 +1,126 @@
+\newcommand{\eqp}{\ensuremath{\, \, \, .}}
+\newcommand{\M}[1]{\textbf{#1}} %Matrix  M
+\newcommand{\Mr}[1]{\textbf{#1}_\rho} %Matrix mit tiefgestelltem rho, M_rho
+\newcommand{\Mtil}[1]{\tilde{\textbf{#1}}} %Matrix mit Tilde
+\newcommand{\Mtilt}[2]{\tilde{\textbf{#1}}_{#2}} %Matrix mit Tilde mit tiefgestelltem arg2
+\DeclareRobustCommand{\Mt}[2]{\textbf{#1}_{#2}} %Matrix M mit tiefgestelltem arg2
+
+
+\DeclareRobustCommand{\w}[1]{\underline{#1}} %Vektor arg1 unterstrichen 
+\DeclareRobustCommand{\wt}[2]{\underline{#1}_{#2}} %Vektor unterstrichen w mit tiefgestelltem arg2
+\DeclareRobustCommand{\wr}[1]{\underline{#1}_{\rho}} %Vektor unterstrichen mit rho, w_rho
+
+% Textbausteine
+% =============
+	% Produktnamen
+	\newcommand*{\Matlab}{\textsc{Matlab}}
+	\newcommand*{\Matlabreg}{\textsc{Matlab}\textsuperscript{\tiny \textregistered}}
+	\newcommand*{\MatSim}{\textsc{Matlab/Simulink}}
+	\newcommand*{\Simulink}{\textsc{Simulink}}
+	\newcommand*{\Simulinkreg}{\textsc{Simulink}\textsuperscript{\tiny \textregistered}}
+
+	% Das Makro |\name|\marg{person} formatiert einen Personennamen bspw. eines Erfinders oder Entdeckers gemäß |\name{Euler}| \arrow\ \name{Euler}.
+	\newcommand*{\name}[1]{\textsc{#1}}
+
+% Makros für Einheiten, Exponenten
+% ================================
+
+	\newcommand*{\unit}[1]{\ensuremath{\mathrm{#1}}}
+	
+	% Wert mit Einheit (mit kleinem Leerzeichen dazwischen), aus Text- UND Math-Modus
+	\newcommand*{\valunit}[2]{\ensuremath{#1\,\mrm{#2}}}
+	
+	
+	% "°C", im Text- oder Mathe-Modus
+	\newcommand*{\degC}{
+		\ifmmode
+		^\circ \mrm{C}%
+		\else
+		\textdegree C%
+		\fi}
+	
+	\newcommand*{\degree}{
+		\ifmmode
+		^\circ%
+		\else
+		\textdegree%
+		\fi}
+	
+	% Für Exponentenschreibweise ( Anwendung: 123\E{3} )
+	\newcommand*{\E}[1]{\ensuremath{\cdot 10^{#1}}}
+	
+	\newcommand*{\eexp}[1]{\ensuremath{\mathrm{e}^{#1}}}
+	\newcommand*{\iu}{\ensuremath{\mathrm{j}}}
+	
+	\newcommand*{\todots}{\ensuremath{,\,\hdots,\,}}
+
+% Makros für Formeln
+% ==================
+
+	% Definition für Vektor und Matizen
+	\newcommand*{\mat}[1]{{\ensuremath{\boldsymbol{\mathrm{#1}}}}}
+	\newcommand*{\ma}[1]{{\ensuremath{\boldsymbol{\mathrm{#1}}}}}
+	\newcommand*{\mas}[1]{\ensuremath{\boldsymbol{#1}}}
+	\newcommand*{\ve}[1]{\ensuremath{\boldsymbol{#1}}}
+	\newcommand*{\ves}[1]{\ensuremath{\boldsymbol{\mathrm{#1}}}}
+	
+	\newcommand*{\AP}{\ensuremath{\mathrm{AP}}}
+	\newcommand*{\doti}{\ensuremath{(i)^\cdot}}
+	
+	\newcommand*{\inprod}[2]{\ensuremath{\langle #1,\,#2 \rangle}}
+	
+	\newcommand*{\ul}[1]{\underline{#1}}
+	
+	% gerades "d" (z.B. für Integral)
+	\newcommand*{\ud}{\ensuremath{\mathrm{d}}}
+	
+	% normaler Text in Formeln
+	\newcommand*{\tn}[1]{\textnormal{#1}}
+	
+	% nicht-kursive Schrift in Formeln
+	\newcommand*{\mrm}[1]{\ensuremath{\mathrm{#1}}}
+	
+	% gerades "T" für Transponiert
+	\newcommand*{\transp}{\ensuremath{\mathrm{T}}}
+	
+	% gerades "rg"
+	\newcommand*{\rang}{\ensuremath{\operatorname{rg}}}
+	
+	% Für geklammerte Ausdrücke mit Index (Subscript)
+	% (einmal mit kursiven Index, einmal mit geradem Index)
+	\newcommand*{\grpsb}[2]{\ensuremath{\left(#1\right)_{#2}}}
+	\newcommand*{\grprsb}[2]{\ensuremath{\left(#1\right)_{\mathrm{#2}}}}
+	
+	% Ableitungen und Integrale
+		% "normale" Ableitung (mit geraden "d"s)
+		\newcommand*{\normd}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}}
+		\newcommand*{\normdat}[3]{\ensuremath{\left.\frac{\mathrm{d} #1}{\mathrm{d} #2}\right|_{#3}}}
+		
+		% Materielle Ableitung
+		\newcommand*{\matd}[2]{\ensuremath{\frac{\mathrm{D} #1}{\mathrm{D} #2}}}
+		\newcommand*{\matdat}[3]{\ensuremath{\left.\frac{\mathrm{D} #1}{\mathrm{D} #2}\right|_{#3}}}
+		
+		% Partielle Ableitung
+		\newcommand*{\partiald}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+		\newcommand*{\partialdat}[3]{\ensuremath{\left.\frac{\partial #1}{\partial #2}\right|_{#3}}}
+	
+	
+	% Transformationen
+	\newcommand*{\FT}[1]{\ensuremath{\mathfrak{F}\left\{#1\right\}}}
+	\newcommand*{\FTabs}[1]{\ensuremath{\left|\mathfrak{F}\left\{#1\right\}\right|}}
+	\newcommand*{\IFT}[1]{\ensuremath{\mathfrak{F}^{-1}\left\{#1\right\}}}
+	\newcommand*{\DFT}[1]{\ensuremath{\mathrm{DFT}\left\{#1\right\}}}
+	\newcommand*{\DFTabs}[1]{\ensuremath{\left|\mathrm{DFT}\left\{#1\right\}\right|}}
+	\newcommand*{\Laplace}[1]{\ensuremath{\mathfrak{L}\left(#1\right)}}
+	\newcommand*{\InvLaplace}[1]{\ensuremath{\mathfrak{L^{-1}}\left(#1\right)}}
+	\newcommand*{\invtrans}{\ensuremath{\quad\bullet\!\!-\!\!\!-\!\!\circ\quad}}
+	\newcommand*{\trans}{\ensuremath{\quad\circ\!\!-\!\!\!-\!\!\bullet\quad}}
+	
+	
+	\newcommand*{\mlfct}[1]{\texttt{#1}}
+	\newcommand*{\mlvar}[1]{\texttt{#1}}
+	
+	
+	% Manche textcomp-Zeichen funktionieren mit dem TU-Design nicht, diese können dann mit diesem
+	% Befehl gesetzt werden.
+	\newcommand*{\textcompstdfont}[1]{{\fontfamily{cmr} \fontseries{m} \fontshape{n} \selectfont #1}}

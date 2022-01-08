@@ -1,0 +1,100 @@
+%\documentclass[
+%	paper=a4,
+%	ngerman,
+%	accentcolor=2c, % Akzentfarbe FG rtm
+%	type=announcement,
+%	marginpar=false,
+%	fleqn,
+%	class=report,
+%	fontsize=11pt
+%	]{tudaposter}
+%
+%%%%%%%%%%%%%%%%%%%%
+%%Sprachanpassung & Verbesserte Trennregeln
+%%%%%%%%%%%%%%%%%%%%
+%\usepackage[english, main=ngerman]{babel}
+%\usepackage[autostyle]{csquotes}% Anführungszeichen vereinfacht
+%\usepackage{microtype}
+%
+%\usepackage{amsmath,amssymb}
+%
+%\usepackage{url}
+%
+%%%%%%%%%%%%%%%%%%%%
+%%Literaturverzeichnis
+%%%%%%%%%%%%%%%%%%%%
+%\catcode30=12  % Workaround for current biblatex problem (https://tex.stackexchange.com/questions/564990/error-after-miktex-reinstall-text-line-contains-an-invalid-character)
+%\usepackage[backend=biber,style=ieee,bibencoding=utf8]{biblatex}
+%%\addbibresource{model_fidelity.bib}
+%
+%\renewcommand*{\bibfont}{\small}
+%\newcommand{\un}[1]{\, \text{#1}}
+%\newcommand{\ve}[1]{\mathbf{#1}}
+%\newcommand{\veG}[1]{\text{\boldmath{$#1$}}}
+%
+%\begin{document}
+%
+%\title{Trajektorienplanung als dynamisches Optimalsteuerungsproblem und Interpretation des Lösungsraums für Fahrkomfort im automatisierten Fahren \vspace{0.2cm}}
+%\subtitle{Aufgabenstellung zur Masterthesis}
+%\titleinfo{Betreuer: Alexander Steinke, M.Sc.\\ \today}
+%\addTitleBox{\includegraphics[width=\linewidth]{rtm_mit_schrift}}
+%
+%\maketitle
+%%\section*{Aufgabenbeschreibung}
+%
+%%Zum numerischen Lösen Dynamischer Optimierungsprobleme können direkte und indirekt
+%
+%%Ein häufiger Ansatz zum Lösen dynamische Optimierungsprobleme ist die 
+%
+%%Dynamische Optimierungsprobleme lassen sich analytisch (Dynamische Optimierung) oder numerisch (Statische Optimierung) lösen. Während in der statischen Optimierung
+
+Die allgemeine Struktur eines Optimalsteuerungsproblems lautet
+%
+\begin{equation*} \begin{aligned}
+		\min\limits_{\ve{u}(\cdot)} \ \ \ & J(\ve{u})=V(\ve{x}(t_\text{f}),t_\text{f}) + \int_{t_0}^{t_\text{f}}l(\ve{x}(t),\ve{u}(t),t)\text{d}t \\
+		\text{u.B.v.} \ \ \ & \dot{\ve{x}}=\ve{f}(\ve{x},\ve{u},t), \ \ve{x}(t_0)=\ve{x}_0\\ 
+		& \mathbf{g}(\ve{x}(t_\text{f}),t_\text{f}) = \ve{0} \\
+		& \mathbf{h}(\ve{x}(t),\ve{u}(t),t) \leq \ve{0}.
+\end{aligned} \end{equation*}
+%
+Häufig werden dynamische Optimierungsprobleme (OP) mithilfe direkter Verfahren numerisch gelöst. 
+In diesem Fall wird das dynamische in ein statisches OP überführt und der endliche Lösungsvektor $\ve{u}_\text{opt} \in \mathcal{U} \subseteq \mathbb{R}^m$ berechnet. 
+Direkte Verfahren haben den Vorteil, dass Zustandsbeschränkungen leichter berücksichtigt werden können und der Konvergenzbereich größer ist. 
+Indirekte Verfahren hingegen liefern eine Einsicht in die Struktur der optimalen Lösung.
+
+In der dynamischen Optimierung hingegen werden Funktionen $\ve{u}(t)$ einer unabhängigen Variable $t$ gesucht. 
+Mithilfe der Variationsrechnung können Optimalitätsbedingungen hergeleitet werden, die ein Randwertproblem formulieren. 
+Die Lösung dieses Randwertproblems liefert in der Folge die optimale Steuertrajektorie $\ve{u}_\text{opt}(t)$. 
+Jedoch ist das Lösen des Randwertproblems für nichtlineare Systeme häufig schwierig, weswegen auf numerische Verfahren zurückgegriffen werden muss.
+
+Um im automatisierten Fahren (AD) gezielt Fahrprofile mittels einer optimalen Trajektorienplanung erstellen zu können, ist ein tieferes Verständnis der optimalen Lösung erforderlich. 
+Mit einem direkten Verfahren ist die Interpretation der Lösung schwierig, da die Lösung aus reinen Zahlenwerten besteht. 
+Zwar könnte ein gewünschtes Fahrverhalten in definierten Fahraufgaben durch zusätzliche Terme im Gütemaß und Anpassung der Gewichte erzielt werden, jedoch ist eine Übertragung auf andere Fahraufgaben fraglich. 
+Eine parametrierte Steuertrajektorie $\ve{u}_\text{opt}(t)$ würde die Interpretation erheblich vereinfachen.
+
+
+Ziele dieser Arbeit sind folgende Punkte:
+\begin{enumerate}
+	\item Übersicht für Lösungsverfahren dynamischer OPs und Einordnung des AD-Planungsproblems
+	\item Erstellen von dynamischen OPs, die durch Variationsrechnung lösbar sind und Lösen dieser
+	\begin{enumerate}
+		\item Geeignete Fahrszenarien (z.B. Geradeausfahrt, Kurve, Geraden-Kurven-Kombination, Spurwechsel)
+		\item Geeignete Komfortmerkmale (z.B. Beschleunigung, Ruck, Fahrdauer)
+		\item Berücksichtigung von Begrenzungen
+	\end{enumerate}
+	\item Interpretation der Lösungenstrajektorien hinsichtlich des dargestellten Funktionenraums 
+	\item Einordnung im Kontext Fahrkomfort
+\end{enumerate}
+
+Die Ergebnisse sind geeignet zu visualisieren und zu dokumentieren. Die aktuelle Fassung der Richtlinien zur Anfertigung von Abschlussarbeiten ist zu beachten.
+
+
+%%Technische Universität Darmstadt \\
+%%Institut für Automatisierungstechnik und Mechatronik \\
+%%Fachgebiet Regelungstechnik und Mechatronik \\
+%%Prof. Dr.-Ing. Ulrich Konigorski
+%
+%%\vspace*{\fill} {\tiny
+%%\printbibliography[heading=none]}
+%
+%\end{document}
