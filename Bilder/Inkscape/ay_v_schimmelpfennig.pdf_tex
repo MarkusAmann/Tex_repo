@@ -1,0 +1,77 @@
+%% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'ay_v_schimmelpfennig.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{587.9724331bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,1.11662003)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ay_v_schimmelpfennig.pdf}}%
+    \put(-0.16650855,0.90691271){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.10050458\unitlength}\end{minipage}}}%
+    \put(0.80261597,0.125913){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{V}{\text{km/h}}$\end{tabular}}}}%
+    \put(-0.00173047,0.99996026){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\frac{a_q}{\text{m/\text{s}$^2$}}$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ay_v_schimmelpfennig.pdf}}%
+    \put(0.0411705,1.09642352){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.04151762,0.82536481){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\\\end{tabular}}}}%
+    \put(0.04015735,0.55202839){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.04179666,0.26960123){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.07520739,0.22139071){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.19097023,0.22137908){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}20\end{tabular}}}}%
+    \put(0.32211524,0.22139071){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}40\end{tabular}}}}%
+    \put(0.45158608,0.22139071){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}60\end{tabular}}}}%
+    \put(0.58192887,0.22134422){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}80\end{tabular}}}}%
+    \put(0.69582045,0.22139071){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}100\end{tabular}}}}%
+    \put(0.83034815,0.21885454){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}120\end{tabular}}}}%
+    \put(0.95615725,0.22139071){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}140\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{ay_v_schimmelpfennig.pdf}}%
+    \put(0.61861975,0.926187){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a_q = 2,2 - 0,003\cdot V$\\ (``scharf'')\end{tabular}}}}%
+    \put(0.64790431,0.59872365){\color[rgb]{0,0,0}\transparent{0.99800003}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$a_q = 1 - 0,002\cdot V$\\ (``normal'')\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

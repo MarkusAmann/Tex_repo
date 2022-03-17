@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="ay_R_hugemann.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.66368547"
+     inkscape:cx="396.27205"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1347"
+     inkscape:window-height="1012"
+     inkscape:window-x="-1475"
+     inkscape:window-y="41"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer3" />
+  <defs
+     id="defs2">
+    <rect
+       x="147.66031"
+       y="964.31221"
+       width="548.45257"
+       height="88.897532"
+       id="rect6146" />
+    <rect
+       x="-423.39333"
+       y="137.11314"
+       width="747.34197"
+       height="109.99186"
+       id="rect2202" />
+  </defs>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true">
+    <image
+       width="248.97292"
+       height="230.1875"
+       preserveAspectRatio="none"
+       xlink:href="../ay_R_hugemann.PNG"
+       id="image832"
+       x="-20.038143"
+       y="22.443163" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="boxen">
+    <rect
+       style="fill:#ffffff;stroke-width:0.465;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect11192"
+       width="19.534233"
+       height="127.17181"
+       x="-17.939598"
+       y="55.812077" />
+    <rect
+       style="fill:#ffffff;stroke-width:0.465;stroke-linecap:square;paint-order:fill markers stroke"
+       id="rect11192-5"
+       width="19.534233"
+       height="127.17181"
+       x="-254.94162"
+       y="54.416775"
+       transform="rotate(-90)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="schrift">
+    <text
+       xml:space="preserve"
+       transform="matrix(0,-0.26458333,0.26458333,0,-46.576741,76.461318)"
+       id="text2200"
+       style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect2202)"><tspan
+         x="-423.39258"
+         y="154.14348"
+         id="tspan11413">Centrifugal acceleration [m/s$^2$]</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text6144"
+       style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect6146)"
+       transform="matrix(0.26458333,0,0,0.26458333,35.879194,-12.757047)"><tspan
+         x="147.66016"
+         y="981.3427"
+         id="tspan11415">Curve radius [m]</tspan></text>
+  </g>
+</svg>

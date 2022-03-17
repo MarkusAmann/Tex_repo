@@ -1,0 +1,81 @@
+%% Creator: Inkscape 1.1.2 (b8e25be833, 2022-02-05), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'ax_s_abbiegen_krause.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1016.21178065bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.58972668)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.04546087,0.07238936){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0,50\end{tabular}}}}%
+    \put(0.04451238,0.20005324){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1,00\end{tabular}}}}%
+    \put(0.04451238,0.32716112){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1,50\end{tabular}}}}%
+    \put(0.04529943,0.5795018){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2,50\\\end{tabular}}}}%
+    \put(0.98330385,0.04643274){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}18\end{tabular}}}}%
+    \put(0.65679263,0.04638504){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}12\end{tabular}}}}%
+    \put(0.76591627,0.04628247){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}14\end{tabular}}}}%
+    \put(0.54661774,0.04451311){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\end{tabular}}}}%
+    \put(0.33315657,0.04582411){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}6\end{tabular}}}}%
+    \put(0.22457463,0.04535532){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0.11255244,0.04404728){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.51714053,0.00284548){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Weg (m)\end{tabular}}}}%
+    \put(0.83726795,0.1760638){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\text{10\%}\end{tabular}}}}%
+    \put(0.83829276,0.2512658){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\text{50\%}\end{tabular}}}}%
+    \put(0.22845836,0.29511667){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\text{20\%}\end{tabular}}}}%
+    \put(0.19659238,0.43153702){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\text{80\%}\end{tabular}}}}%
+    \put(0.01060159,0.21984805){\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Beschleunigung (m/s$^2$)\end{tabular}}}}}%
+    \put(0.44412739,0.34939512){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}arithm. Mittelwert\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ax_s_abbiegen_krause.pdf}}%
+    \put(0.23524983,0.52184111){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\text{90\%}\end{tabular}}}}%
+    \put(0.04529943,0.45513654){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}2,00\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ax_s_abbiegen_krause.pdf}}%
+    \put(0.44224853,0.04513175){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}8\end{tabular}}}}%
+    \put(0.87438244,0.04674197){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}16\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
