@@ -1,0 +1,62 @@
+\chapter{Optimierung - Mathematische Grundlagen und Methoden}\label{cha:Optimierung}
+In diesem Kapitel werden die notwendigen mathematischen Grundlagen hergeleitet und dargelegt, die zur Formulierung eines Optimierungsproblems und zur Lösung mithilfe der Variationsrechnung notwendig sind. Dazu wird zunächst der Unterschied zwischen \textit{statischer} und \textit{dynamischer} Optimierung erläutert und anschließend mit der Variationsrechnung eine Lösungsmethode eingeführt, mit der sich ein dynamisches Optimierungsproblem in ein System nichtlinearer \gls{DGL} 1. Ordnung überführen lässt, dessen Lösung entweder analytisch oder numerisch bestimmt werden kann. Danach werden zusätzliche Methoden erläutert, mit deren Hilfe  sich ein komplexes Optimierungsproblem in mehrere miteinander verknüpfte Optimierungsaufgaben unterteilen lässt, deren Lösungen vergleichsweise einfach bestimmt werden können. Abschließend werden einige Lösungsverfahren zur numerischen Lösung dynamischer Optimierungsprobleme vorgestellt und diskutiert. 
+
+
+\section{Statische Optimierung}\label{sec:statischeOpt}
+Die allgemeine Standardformulierung eines statischen Optimierungsproblems lautet \cite{KnutGraichen.2012}:
+\begin{align*}
+	\min_{\ve{x}\in\mathbb{R}^n} \quad &\fofx \\
+	\textrm{s.t.} \quad&\ve{g}(\ve{x}) = 0\\
+	&\ve{h}(\ve{x}) \leq 0
+\end{align*}
+Die Funktion \fofx\,wird dabei als Kosten- oder Gütefunktion bezeichnet und bezüglich der Optimierungsvariablen $\ve{x}$ minimiert. Bei der statischen Optimierung sind die Variablen $\ve{x}$ Elemente des Euklidischen Raums \cite{KnutGraichen.2012}. Für die \gls{GNB} $\ve{g}(\ve{x})$ und die \gls{UNB} $\ve{h}(\ve{x})$ gilt $\ve{g}\in\mathbb{R}^p$ bzw. $\ve{h}\in\mathbb{R}^q$, wobei $p<n$ sein muss, da sich die Optimierungsvariablen $\ve{x}$ ansonsten bei $p=n$ unabhängigen Gleichungen direkt aus $\ve{g}(\ve{x})$ bestimmen lassen \cite{Papageorgiou.2012}. Für die Anzahl der \gls{UNB} hingegen gibt es keine maximale Anzahl \cite{Papageorgiou.2012}.
+
+
+\section{Dynamische Optimierung}\label{sec:dynamischeOpt}
+Im Unterschied zur statischen Optimierung sind die Optimierungsvariablen bei der dynamischen Optimierung selbst Funktionen einer unabhängigen Variable, welche in den meisten Fällen der Zeit $t$ entspricht \cite{KnutGraichen.2012}. Das bedeutet, es werden nun die optimalen Zeitverläufe \xoft\,der Optimierungsvariablen gesucht. Aufgrund dessen wird die Funktion \fofx\,zum Kosten- oder Gütefunktional \J, welches bei der dynamischen Optimierung minimiert wird. Handelt es sich bei den gesuchten Zeitverläufen der Optimierungsvariablen \xoft\,um die Zustände eines dynamischen Systems, so liefert die Lösung des Problems die optimalen Zustandstrajektorien, weshalb die Formulierung eines dynamischen Optimierungsproblems einen geeigneten Ansatz zur Trajektorienplanung dynamischer Systeme darstellt. Werden zusätzlich oder anstatt der Zustandsverläufe die Eingangsgröße des dynamischen Systems als Optimierungsvariable gewählt, so wird auch von einem \textit{Optimalsteuerungsproblem} gesprochen, da die Lösung die optimale Eingangs- bzw. Steuerungstrajektorie liefert \cite{KnutGraichen.2012}.
+Die allgemeine Formulierung eines dynamischen Optimierungsproblems lautet \cite{KnutGraichen.2012}:
+\begin{align}
+\min_{\xoft,\uoft} \quad &J(\xoft,\uoft,t) = \Vofxoft + \int_{t_0}^{t_f}l(\xoft,\uoft,t)\dtint{t} \label{eq:J_dyn}\\
+\textrm{s.t.} \quad& \dx = \ve{f}(\ve{x},\ve{u},t)\,,\qquad \ve{x}(t_0) = \ve{x}_0 \label{eq:system_anfang}\\
+&\ve{g}(\ve{x}(t_f),t_f) = 0 \label{eq:GNB}\\
+&\ve{h}(\ve{x},\ve{u}) \leq 0 \label{eq:UNB}
+\end{align}
+Wie bereits bei der statischen Optimierung stellen die Gleichungen \ref{eq:GNB} und \ref{eq:UNB} \gls{GNB} und \gls{UNB} dar. Zusätzlich beschreibt Gleichung \ref{eq:system_anfang} die Systemdynamik mit der Eingangsgröße \uoft\,und die Anfangszustände $\ve{x}_0$ des Systems, die als \gls{RB} fungieren. Das Gütefunktional \J\,wird in der dargestellten Form auch als \textit{Bolza-Form} des Gütefunktionals bezeichnet und setzt sich aus zwei Teilen zusammen: Der Integralanteil beschreibt die von der Zeit abhängenden laufenden Kosten und heißt \textit{Lagrange-Form}. Der vor dem Integralanteil stehende Term \Vofxoft\,gibt die Bewertung des Endzustands (und der Endzeit), also die Endkosten, an. Dieser wird \textit{Mayer-Form} genannt \cite{KnutGraichen.2012}. Für die Lagrange- und Bolza-Form gilt, dass sie sich immer in die Mayer-Form überführen lassen \cite{KnutGraichen.2012} (siehe auch \cite{Gerdts.2010}). Der Endzeitpunkt $t_f$ kann allgemein festgelegt sein oder auch frei. Ist er frei, so muss $t_f$ als zusätzliche Optimierungsvariable bei der Lösung des Optimierungsproblems berücksichtigt werden. 
+
+\subsection{Variationsrechnung}
+Die Variationsrechnung bietet einen Ansatz, mit dem dynamische Optimierungsprobleme, wie im vorherigen Absatz vorgestellt, gelöst werden können. Dazu werden ausgehend von den optimalen Trajektorien \opt{\ve{x}} und \opt{\ve{u}} und dem optimalen Endzeitpunkt \opt{t_f} (sofern $t_f$ Teil der Optimierung ist) Variationen zugelassen, sodass gilt \cite{KnutGraichen.2012}:
+\begin{align}
+\xoft &= \opt{\ve{x}}(t) + \epsilon\variation{x}(t) \label{eq:x_var}\\
+\dxoft &= \opt{\dx}(t) + \epsilon\variation{\dot{x}}(t) \label{eq:dx_var}\\
+\uoft &= \opt{\ve{u}}(t) + \epsilon\variation{u}(t) \label{eq:u_var}\\
+t_f &= \opt{t_f} + \epsilon\delta_{t_f}\label{eq:t_var}
+\end{align}
+Die $\ve{\delta}$-Variablen bezeichnen dabei die Variationen der einzelnen Größen und $\epsilon$ ist der Parameter, mit dem die Variationen Einfluss auf die Trajektorien nehmen, wobei für $\epsilon=0$ offensichtlich $\xoft=\opt{\ve{x}}(t)$, $\dxoft = \opt{\dx}$ und $\uoft=\opt{\ve{u}}(t)$ gilt. In Abbilung \ref{fig:Variation} ist ein solcher Verlauf einer möglichen optimalen Trajektorie $\opt{x}(t)$ und einer zulässigen Variation skizziert. Außerdem sind die Variation des Endzeitpunkts und des Endzustands $\ve{x}(t_f) = \opt{\ve{x}}(t_f)+\variation{x}(t_f)+\opt{\dx}(\opt{t_f})\delta_{t_f}$ (falls, $x(t_f)$ frei ist) dargestellt.
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[domain=0:4, samples=200]
+\draw[->] (0,0) -- (5,0) node[right] {$t$};
+\draw[->] (0,0) -- (0,4) node[above] {$x$};
+\draw[color=black,domain=0:4,-*]    plot (\x,{sqrt(\x)});
+\draw[color=red,domain=0:4.5,-*]   plot (\x,{sqrt(\x)+0.5*sin(3*\x r)});
+\draw [dashed] (3.92,0) node[below] {$\opt{t_f}$} -- (3.92,3);
+\draw [dashed] (4.43,0) node[below] {$t_f$} -- (4.43,3);
+\draw [stealth-stealth] (3.92,0.7) -- (4.43,0.7) node[midway,above] {$\delta_{t_f}$};
+\draw [stealth-stealth] (4.7,1.9) -- (4.7,2.51) node[midway,right] {$\variation{x}(t_f)+\opt{\dx}(\opt{t_f})\delta_{t_f}$};
+\draw [-stealth] (2.7,0.7) node[below] {$\opt{\ve{x}} + \epsilon\variation{x}(t)$} -- (3.3,1.4) ;
+\draw [-stealth] (1.3,2) node[above] {\opt{\ve{x}}} -- (1.5,1.3) ;
+\end{tikzpicture}
+\caption{Schematische Darstellung der optimalen Trajektorie $\opt{\ve{x}}(t)$ und eine mögliche, zulässige Variation \xoft.}
+\label{fig:Variation}
+\end{figure}
+
+Allgemein wird für die Herleitung der Lösung des Variationsproblems ein Gütefunktional der Form
+\begin{equation}
+	J(\xoft,\dxoft,t) = \int_{t_0}^{t_f}\Phi(\xoft,\dxoft,t)\dtint{t} \label{eq:J_var}
+\end{equation}
+verwendet \cite{KnutGraichen.2012}, welches für die Optimierung dynamischer Systeme wie folgt definiert werden kann \cite{KnutGraichen.2012}:
+\begin{equation}
+\bar{J}(\xoft,\dxoft,\uoft,t) = \Vofxoft + \int_{t_0}^{t_f}l(\xoft,\uoft,t) + \ve{\lambda}^T(\ve{f}(\ve{x},\ve{u},t) - \dx)\dtint{t} \label{eq:J_var_sys}
+\end{equation}
+Im Vergleich zu \ref{eq:J_dyn} wurde das Gütefunktional um den Term $\ve{\lambda}^T(\ve{f}(\ve{x},\ve{u},t) - \dx)$ erweitert, wobei dieser für $\dx = \ve{\lambda}^T(\ve{f}(\ve{x},\ve{u},t)$ zu null wird. Die Variablen $\ve{\lambda}$ stellen dabei die sogenannten adjungierten Zustände dar \cite{KnutGraichen.2012}. Werden die Variablen in \ref{eq:J_var} nun durch die Gleichungen \ref{eq:x_var}-\ref{eq:t_var} ersetzt, hängt das Gütefunktional nur noch von $\epsilon$ ab. Da die Trajektorien \xoft, \dxoft und \uoft wie bereits gezeigt nur für $\epsilon=0$ den optimalen Verläufen entsprechen können, lautet die notwendige Bedingung für das Verschwinden der Variation des Gütefunktionals $\delta_J$ und damit für ein Minimum $\delta_J = \frac{\textrm{d}J(\opt{\ve{x}}+\epsilon\variation{x})}{\dtint{\epsilon}}_{|\epsilon=0}=0$ bzw. $\delta_{\bar{J}} = \frac{\textrm{d}\bar{J}(\opt{\ve{x}}+\epsilon\variation{x})}{\dtint{\epsilon}}_{|\epsilon=0}=0.$
+Aus dieser Bedingung lässen sich die notwendigen Optimalitätbedingungen für eine optimale Lösung herleiten. Auf die vollständige Herleitung der Gleichungen wird an dieser Stelle verzichtet und auf weiterführende Literatur verwiesen \cite{KnutGraichen.2012,Papageorgiou.2012,Gerdts.2010}.
