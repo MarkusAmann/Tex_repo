@@ -132,13 +132,131 @@
 \newcommand*{\amin}{\ensuremath{a_{\textrm{min}}}}
 \newcommand*{\jmax}{\ensuremath{j_{\textrm{max}}}}
 \newcommand*{\jmin}{\ensuremath{j_{\textrm{min}}}}
+\newcommand*{\opt}[1]{\ensuremath{{#1}^*}}
 \newcommand*{\fofx}{\ensuremath{f(\ve{x})}}
 \newcommand*{\J}{\ensuremath{J(\ve{x}(t),\ve{u}(t),t)}}
-\newcommand*{\xoft}{\ensuremath{\ve{x}(t)}}
-\newcommand*{\uoft}{\ensuremath{\ve{u}(t)}}
-\newcommand*{\dx}{\ensuremath{\dot{\ve{x}}}}
-\newcommand*{\dxoft}{\ensuremath{\dot{\ve{x}}(t)}}
-\newcommand*{\Vofxoft}{\ensuremath{V(\ve{x}(t_f),t_f)}}
-\newcommand*{\opt}[1]{\ensuremath{{#1}^*}}
+\newcommand*{\Vofxoftf}{\ensuremath{V(\ve{x}(t_f),t_f)}}
+\newcommand*{\Vofxoftone}{\ensuremath{\tilde{V}(\ve{x}(t_1^-),\ve{x}(t_1^+),t_1)}}
+\newcommand*{\Vofxoftfallgemein}{\ensuremath{\bar{V}(\ve{x}(t_f),t_f)}}
+\newcommand*{\Vofxoftoftonefallgemein}{\ensuremath{\hat{V}(\ve{x}(t_f),\ve{x}(t_1^-),\ve{x}(t_1^+),t_f,t_1)}}
 \newcommand*{\variation}[1]{\ensuremath{\ve{\delta}_{#1}}}
 \newcommand*{\dtint}[1]{\ensuremath{\textrm{d}{#1}}}
+% Makros für x(t) Variablen
+% ================================
+\newcommand*{\xzero}{\ensuremath{\ve{x}_0}}
+\newcommand*{\xoft}{\ensuremath{\ve{x}(t)}}
+\newcommand*{\xoftf}{\ensuremath{\ve{x}(t_f)}}
+\newcommand*{\xoftzero}{\ensuremath{\ve{x}(t_0)}}
+\newcommand*{\xoftone}{\ensuremath{\ve{x}(t_1)}}
+\newcommand*{\xoftoneminus}{\ensuremath{\ve{x}(t_1^-)}}
+\newcommand*{\xoftoneplus}{\ensuremath{\ve{x}(t_1^+)}}
+\newcommand*{\xoptoft}{\ensuremath{\opt{\ve{x}}(t)}}
+\newcommand*{\xoptoftf}{\ensuremath{\opt{\ve{x}}(t_f)}}
+\newcommand*{\xoptoftzero}{\ensuremath{\opt{\ve{x}}(t_0)}}
+\newcommand*{\xoptoftfopt}{\ensuremath{\opt{\ve{x}}(\opt{t_f})}}
+% Makros für x(tau) Variablen
+% ================================
+\newcommand*{\xoftau}{\ensuremath{\ve{x}(\tau)}}
+\newcommand*{\xoftauf}{\ensuremath{\ve{x}(\tau_f)}}
+\newcommand*{\xoftauzero}{\ensuremath{\ve{x}(\tau_0)}}
+\newcommand*{\xoptoftau}{\ensuremath{\opt{\ve{x}}(t\tau)}}
+\newcommand*{\xoptoftauf}{\ensuremath{\opt{\ve{x}}(\tau_f)}}
+\newcommand*{\xoptoftauzero}{\ensuremath{\opt{\ve{x}}(\tau_0)}}
+\newcommand*{\xoptoftaufopt}{\ensuremath{\opt{\ve{x}}(\opt{\tau_f})}}
+% Makros für dx(t) Variablen
+% ================================
+\newcommand*{\dx}{\ensuremath{\dot{\ve{x}}}}
+\newcommand*{\dxoft}{\ensuremath{\dot{\ve{x}}(t)}}
+\newcommand*{\dxoftf}{\ensuremath{\dot{\ve{x}}(t_f)}}
+\newcommand*{\dxoftzero}{\ensuremath{\dot{\ve{x}}(t_0)}}
+\newcommand*{\dxoptoft}{\ensuremath{\dot{\ve{x}}^*(t)}}
+\newcommand*{\dxoptoftf}{\ensuremath{\dot{\ve{x}}^*(t_f)}}
+\newcommand*{\dxoptoftfopt}{\ensuremath{\dot{\ve{x}}^*(\opt{t_f})}}
+% Makros für dx(tau) Variablen
+% ================================
+\newcommand*{\dxoftau}{\ensuremath{\ve{x}'(\tau)}}
+\newcommand*{\dxoftauf}{\ensuremath{\ve{x}'(\tau_f)}}
+\newcommand*{\dxoftauzero}{\ensuremath{\ve{x}'(\tau_0)}}
+\newcommand*{\dxoptoftau}{\ensuremath{\ve{x}'^*(\tau)}}
+\newcommand*{\dxoptoftauf}{\ensuremath{\ve{x}'^*(\tau_f)}}
+\newcommand*{\dxoptoftaufopt}{\ensuremath{\ve{x}'^*(\opt{\tau_f})}}
+% Makros für u(t) Variablen
+% ================================
+\newcommand*{\uoft}{\ensuremath{\ve{u}(t)}}
+\newcommand*{\uoftf}{\ensuremath{\ve{u}(t_f)}}
+\newcommand*{\uoftzero}{\ensuremath{\ve{u}(t_0)}}
+\newcommand*{\uoptoft}{\ensuremath{\opt{\ve{u}}(t)}}
+\newcommand*{\uoptoftf}{\ensuremath{\opt{\ve{u}}(t_f)}}
+\newcommand*{\uoptoftfopt}{\ensuremath{\opt{\ve{u}}(\opt{t_f})}}
+% Makros für u(tau) Variablen
+% ================================
+\newcommand*{\uoftau}{\ensuremath{\ve{u}(\tau)}}
+\newcommand*{\uoftauf}{\ensuremath{\ve{u}(\tau_f)}}
+\newcommand*{\uoftauzero}{\ensuremath{\ve{u}(\tau_0)}}
+\newcommand*{\uoptoftau}{\ensuremath{\opt{\ve{u}}(\tau)}}
+\newcommand*{\uoptoftauf}{\ensuremath{\opt{\ve{u}}(\tau_f)}}
+\newcommand*{\uoptoftaufopt}{\ensuremath{\opt{\ve{u}}(\opt{\tau_f})}}
+% Makros für lambda(t) Variablen
+% ================================
+\newcommand*{\lambdaoft}{\ensuremath{\ve{\lambda}(t)}}
+\newcommand*{\lambdaoftf}{\ensuremath{\ve{\lambda}(t_f)}}
+\newcommand*{\lambdaoftoneminus}{\ensuremath{\ve{\lambda}(t_1^-)}}
+\newcommand*{\lambdaoftoneplus}{\ensuremath{\ve{\lambda}(t_1^+)}}
+% Makros für lambda(tau) Variablen
+% ================================
+\newcommand*{\lambdaoftau}{\ensuremath{\ve{\lambda}(\tau)}}
+\newcommand*{\lambdaoftauf}{\ensuremath{\ve{\lambda}(\tau_f)}}
+% Makros für dlambda(t) Variablen
+% ================================
+\newcommand*{\dlambda}{\ensuremath{\dot{\ve{\lambda}}}}
+\newcommand*{\dlambdaoft}{\ensuremath{\dot{\ve{\lambda}}(t)}}
+% Makros für dlambda(tau) Variablen
+% ================================
+\newcommand*{\dlambdaoftau}{\ensuremath{\ve{\lambda}'(\tau)}}
+% Makros für z(t) Variablen
+% ================================
+\newcommand*{\zzero}{\ensuremath{\ve{z}_0}}
+\newcommand*{\zoft}{\ensuremath{\ve{z}(t)}}
+\newcommand*{\zoftf}{\ensuremath{\ve{z}(t_f)}}
+\newcommand*{\zoftzero}{\ensuremath{\ve{z}(t_0)}}
+\newcommand*{\zoptoft}{\ensuremath{\opt{\ve{z}}(t)}}
+\newcommand*{\zoptoftf}{\ensuremath{\opt{\ve{z}}(t_f)}}
+\newcommand*{\zoptoftzero}{\ensuremath{\opt{\ve{z}}(t_0)}}
+\newcommand*{\zoptoftfopt}{\ensuremath{\opt{\ve{z}}(\opt{t_f})}}
+% Makros für z(tau) Variablen
+% ================================
+\newcommand*{\zoftau}{\ensuremath{\ve{z}(\tau)}}
+\newcommand*{\zoftauf}{\ensuremath{\ve{z}(\tau_f)}}
+\newcommand*{\zoftauzero}{\ensuremath{\ve{z}(\tau_0)}}
+\newcommand*{\zoptoftau}{\ensuremath{\opt{\ve{z}}(\tau)}}
+\newcommand*{\zoptoftauf}{\ensuremath{\opt{\ve{z}}(\tau_f)}}
+\newcommand*{\zoptoftauzero}{\ensuremath{\opt{\ve{z}}(\tau_0)}}
+\newcommand*{\zoptoftaufopt}{\ensuremath{\opt{\ve{z}}(\opt{\tau_f})}}
+% Makros für dz(t) Variablen
+% ================================
+\newcommand*{\dz}{\ensuremath{\dot{\ve{z}}}}
+\newcommand*{\dzoft}{\ensuremath{\dot{\ve{z}}(t)}}
+\newcommand*{\dzoftf}{\ensuremath{\dot{\ve{z}}(t_f)}}
+\newcommand*{\dzoftzero}{\ensuremath{\dot{\ve{z}}(t_0)}}
+\newcommand*{\dzoptoft}{\ensuremath{\dot{\ve{z}}^*(t)}}
+\newcommand*{\dzoptoftf}{\ensuremath{\dot{\ve{z}}^*(t_f)}}
+\newcommand*{\dzoptoftfopt}{\ensuremath{\dot{\ve{z}}^*(\opt{t_f})}}
+% Makros für dz(tau) Variablen
+% ================================
+\newcommand*{\dzoftau}{\ensuremath{\ve{z}'(\tau)}}
+\newcommand*{\dzoftauf}{\ensuremath{\ve{z}'(\tau_f)}}
+\newcommand*{\dzoftauzero}{\ensuremath{\ve{z}'(\tau_0)}}
+\newcommand*{\dzoptoftau}{\ensuremath{\ve{z}'^*(\tau)}}
+\newcommand*{\dzoptoftauf}{\ensuremath{\ve{z}'^*(\tau_f)}}
+\newcommand*{\dzoptoftaufopt}{\ensuremath{\ve{z}'^*(\opt{\tau_f})}}
+% Makros für Ttransformation Variablen
+% ================================
+\newcommand*{\Ttransoftau}{\ensuremath{\mathcal{T}(\tau)}}
+\newcommand*{\Ttransoftauzero}{\ensuremath{\mathcal{T}(\tau_0)}}
+\newcommand*{\Ttransoftauf}{\ensuremath{\mathcal{T}(\tau_f)}}
+% Makros für dTtransformation Variablen
+% ================================
+\newcommand*{\dTtransoftau}{\ensuremath{\mathcal{T}'(\tau)}}
+\newcommand*{\dTtransoftauzero}{\ensuremath{\mathcal{T}'(\tau_0)}}
+\newcommand*{\dTtransoftauf}{\ensuremath{\mathcal{T}'(\tau_f)}}
+
