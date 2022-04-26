@@ -51,8 +51,8 @@
 Die allgemeine Struktur eines Optimalsteuerungsproblems lautet
 %
 \begin{equation*} \begin{aligned}
-		\min\limits_{\ve{u}(\cdot)} \ \ \ & J(\ve{u})=V(\ve{x}(t_\text{f}),t_\text{f}) + \int_{t_0}^{t_\text{f}}l(\ve{x}(t),\ve{u}(t),t)\text{d}t \\
-		\text{u.B.v.} \ \ \ & \dot{\ve{x}}=\ve{f}(\ve{x},\ve{u},t), \ \ve{x}(t_0)=\ve{x}_0\\ 
+		\min\limits_{\ve{u}(t)} \ \ \ & J(\ve{u})=V(\ve{x}(t_\text{f}),t_\text{f}) + \int_{t_0}^{t_\text{f}}l(\ve{x}(t),\ve{u}(t),t)\text{d}t \\
+		\text{u.B.v.} \ \ \ & \dot{\ve{x}}(t)=\ve{f}(\ve{x}(t),\ve{u}(t),t), \ \ve{x}(t_0)=\ve{x}_0\\ 
 		& \mathbf{g}(\ve{x}(t_\text{f}),t_\text{f}) = \ve{0} \\
 		& \mathbf{h}(\ve{x}(t),\ve{u}(t),t) \leq \ve{0}.
 \end{aligned} \end{equation*}
