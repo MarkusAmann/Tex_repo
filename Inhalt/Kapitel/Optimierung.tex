@@ -258,11 +258,59 @@ H_i(\ve{x},\ve{u},\ve{\lambda},t)_{|t=t_i^-} = H_{i+1}(\ve{x},\ve{u},\ve{\lambda
 
 Die in diesem Kapitel beschriebenen Methoden liefern das Handwerkszeug, um dynamische \gls{OP} mithilfe der Variationsrechnung zu lösen und die Problemstellung so zu formulieren, dass komplexe Fahrszenarien durch geschickte Kombination mehrerer Teilszenarien vereinfacht und analytisch gelöst werden können. Das Optimalitätsprinzip nach Bellmann (siehe Abschnitt \ref{subsec:Optimalitätsprinzip}) liefert die Grundlage dafür, dass mehrere Teilprobleme die optimale Lösung für ein Gesamtproblem ergeben. Mithilfe von Zeittransformationen und unter Verwendung diskontinuierlicher Systemdynamik (Abschnitte \ref{sec:Zeittransformation} und \ref{sec:Diskontinuität}) lassen sich auf frei wählbaren Zeitintervallen beliebig viele Teilsysteme unterschiedlicher Systemdynamik miteinander kombinieren, wobei sich mithilfe der Nebenbedingungen an den internen Übergangspunkten (siehe Abschnitt \ref{sec:InterneGNB}) Stetigkeit der Systemzustände erzielen lassen, während weiterhin die Optimalität der Lösung gewährleistet ist.
 \section{Numerische Lösungsverfahren}\label{sec:Lösungsverfahren}
-In diesem Abschnitt sollen nun einige numerische Lösungsverfahren für dynamische \gls{OP} erläutert und hinsichtlich ihrer Vor- und Nachteile miteinander verglichen werden. Dazu wird zunächst der Unterschied zwischen \textit{indirekten} und \textit{direkten} Lösungsverfahren erklärt und anschließend jeweils verschiedene Verfahren der beiden Verfahrensklassen vorgestellt.
+Dieser Abschnitt dient der Übersicht über unterschiedliche numerische Lösungsverfahren für dynamische \gls{OP}. Dazu sollen einige Verfahren erläutert und hinsichtlich ihrer Vor- und Nachteile miteinander verglichen werden. Zunächst wird der Unterschied zwischen \textit{indirekten} und \textit{direkten} Lösungsverfahren erklärt und anschließend jeweils verschiedene Verfahren der beiden Verfahrensklassen vorgestellt.
 \subsection{Indirekte Lösungsverfahren}\label{subsec:Indirekt}
 Bei den indirekten Lösungsverfahren wird mithilfe der Optimalitätsbedingungen \eqref{eq:Zustandsdgl}-\eqref{eq:Steuerungsgleichung} und den Randbedingungen \eqref{eq:Anfangswerte}-\eqref{eq:Transversalitaet} das entstehende Randwertproblem gelöst \cite{Papageorgiou.2012} - die indirekten Lösungsverfahren basieren also auf der Anwendung der Variationsrechnung. Die Lösung kann dabei entweder analytisch oder mithilfe numerisch ermittelt werden \cite{Gerdts.2010}. Im Gegensatz zu den direkten Lösungsverfahren wird das dynamische \gls{OP} bzw. Optimalsteuerungsproblem bei indirekten Verfahren nicht zunächst diskretisiert, sondern es werden direkt die Optimalitätsbedingungen für das entsprechende \gls{OP} hergeleitet, weshalb bei den direkten Verfahren auch von einer ``\textit{first optimize, then discretize''}-Strategie gesprochen wird \cite{Papageorgiou.2012} - dies trifft insbesondere auf indirekte Diskretisierungsverfahren zu (siehe Abschnitt \ref{subsubsec:Diskretisierungsverfahren_indirekt}). Dadurch, dass das dynamische \gls{OP} bei indirekten Verfahren nicht zuerst in ein statisches Ersatzproblem umgewandelt, sondern stattdessen mithilfe der Variationsrechnung ein Randwertproblem gelöst wird, besitzen sie den großen Vorteil, dass sie zum einen sehr genaue Lösungen liefern und zum anderen Informationen über die Struktur der optimalen Lösung liefern \cite{KnutGraichen.2012}. Selbst wenn das Randwertproblem nicht analytisch gelöst werden kann, so lassen sich trotzdem aus der Lösung der kanonischen \gls{DGL} Erkenntnisse gewinnen, die vor allem für die Interpretation der optimalen Trajektorien sehr wertvoll sein können. Ein weiterer Vorteil indirekter Lösungsverfahren ist, dass die adjungierten Zustände zur Sensitivitätsanalyse des Gütefunktionals gegenüber Änderungen der Anfangszustände \xzero\,verwendet werden können \cite{KnutGraichen.2012}. Indirekte Lösungsverfahren haben den Nachteil, dass die Lösbarkeit eines dynamischen \gls{OP} mittels eines indirekten Verfahrens von der Struktur des \gls{OP} selbst abhängt. Das bedeutet, dass die Herleitung der kanonischen \gls{DGL} und die Tatsache, ob überhaupt eine Lösung angegeben werden kann, sowie die Lösbarkeit des resultierenden Randwertproblems von der Problemstellung selbst abhängen. Die Optimalitätsbedingungen und die Randbedingungen aufzustellen kann für komplizierte Systeme sehr aufwändig sein \cite{Papageorgiou.2012}. Außerdem benötigen indirekte Lösungsverfahren häufig Startschätzungen für die adjungierten Zustände. Die Schätzung dieser Initialwerte beeinflusst die Qualität der Lösung bzw., ob das Verfahren überhaupt konvergiert, sodass der Konvergenzbereich indirekter Verfahren oftmals nicht sehr groß ist \cite{Papageorgiou.2012}. Nachfolgend werden einige indirekte Lösungsverfahren vorgestellt und hinsichtlich des \gls{AD}-Planungsproblems diskutiert. 
 \subsubsection{Indirekte Diskretisierungsverfahren}\label{subsubsec:Diskretisierungsverfahren_indirekt}
+Der ``\textit{first optimize, then discretize''}-Ansatz für indirekte Lösungsverfahren trifft vor allem auf indirekte Diskretisierungverfahren zu. Entsprechend der Ausführungen in Abschnitt \ref{sec:dynamischeOpt} werden die \gls{DGL} \eqref{eq:Sysdyn_z} über den Ansatz der Variationsrechnung hergeleitet. Gemeinsam mit den Randbedingungen \eqref{eq:Anfangswerte}-\eqref{eq:Transversalitaet} ergibt sich ein \gls{ZPR}, welches auf dem Gesamtintervall $[t_0, t_f]$ an $N+1$ Stützstellen diskretisiert wird \cite{KnutGraichen.2012} - das Problem wird also zuerst optimiert und anschließend diskretisiert. Dieses Randwertproblem wird mithilfe eines numerischen Integrationsverfahrens, wie zum Beispiel dem Verfahren von Heun, bei dem ein Trapez zur Approximation des Integrals verwendet wird (siehe auch \cite{Adamy.2009} für Informationen zu weiteren Verfahren), unter Berücksichtigung der Randbedingungen gelöst \cite{KnutGraichen.2012}. Da die zu lösenden \gls{DGL} bei der numerischen Integration durch Differenzenquotienten ersetzt werden, werden Diskretisierungsverfahren auch als Differenzenverfahren bezeichnet \cite{Ascher.1995c5}.
+\begin{multicols}{2}
+Vorteile:
+	\begin{itemize}
+		\item Numerische Robustheit aufgrund simultaner Berücksichtigung der kanonischen \gls{DGL} und Randbedingungen \cite{KnutGraichen.2012}
+		\item Erhöhung der Genauigkeit durch Steigerung der Anzahl der Diskretisierungsstellen \cite{KnutGraichen.2012}
+		\item Durch Anwendung von Runge-Kutta-Verfahren mit höherer Verfahrensordnung, lässt sich die Genauigkeit der Integralapproximation verbessern \cite{Ascher.1995c5}
+	\end{itemize}
+	
+	\columnbreak
+	
+Nachteile:
+	\begin{itemize}
+		\item Steuergröße $\ve{u}$ muss explizit nach $\ve{x}$ und $\ve{\lambda}$ auflösbar sein \cite{KnutGraichen.2012}\vspace{\fill}
+		\item Gute Initialschätzung für \lambdaoftzero\,notwendig \cite{KnutGraichen.2012}\vspace{\fill}
+		\item Größere Anzahl an Diskretisierungsstellen steigert den Rechenaufwand \cite{KnutGraichen.2012}\vspace{\fill}
+	\end{itemize}
+\end{multicols}
+
 \subsubsection{Indirekte Schießverfahren}\label{subsubsec:Schießverfahren_indirekt}
+Indirekte Schießverfahren gehen ebenfalls von den \gls{DGL} in Gleichung \eqref{eq:Sysdyn_z} aus. Im Gegensatz zum indirekten Diskretisierungsverfahren wird beim Einfachschießverfahren die Lösung ausgehend von einem Anfangswertproblem berechnet \cite{Papageorgiou.2012}, anstelle des \gls{ZPR}. Dazu wird aus den Anfangswerten \xzero\,und einer Initialschätzung $\ve{\lambda}_0^{(0)}$ für die adjungierten Zustände der Startvektor $\ve{z}_0 = \begin{bmatrix}\xzero^T & \ve{\lambda}_0^{(0)T}\end{bmatrix}^T$ gebildet. Von diesem Startvektor ausgehend werden die \gls{DGL} anschließend bis $t_f$ numerisch vorwärts integriert. Nach Abschluss der Integration erhält man ein Ergebnis für $\lambdaoftf^{(0)}$, welches mit den Randbedingungen \eqref{eq:Lambdaend} verglichen wird. Die Abweichungen in den Randbedingungen lassen sich durch den Fehlervektor $\ve{e}^{(l)} = \lambdaoftf - \ve{\lambda}(t_f)^{(l)}$ ausdrücken, der durch Verbesserung der Startschätzung $\ve{\lambda}_0^{(l)}$ so lange verringert wird, bis eine gewünschte Fehlertoleranz nicht mehr überschritten wird und damit das Ergebnis einer vorgegebenen Güte entspricht \cite{Papageorgiou.2012}. Der hochgestellte Index $(l)$ gibt dabei die $l$-te Iteration der Integration an. Der Startwert $\ve{\lambda}_0^{(l+1)}$ der nächsten Iteration kann zum Beispiel durch Anwendung des Newton-Verfahrens aktualisiert werden \cite{Papageorgiou.2012}.
+Auch freie Endzeiten $t_f$ können beim Schießverfahren berücksichtigt werden. Dazu wird analog zu den adjungierten Anfangszuständen eine Initialschätzung $t_f^{0}$ vorgegeben und der Fehlervektor um die Transversalitätsbedingung für freie Endzeit \eqref{eq:Transversalitaet} erweitert \cite{Papageorgiou.2012}.
+\begin{multicols}{2}
+	Vorteile:
+	\begin{itemize}
+		\item ``Einfache'' Methode mit geringem Implementierungsaufwand \cite{Ascher.1995c4}\vspace{\fill}
+		\item Mehrfachschießverfahren bietet die Möglichkeit der Parallelisierung \cite{Betts.1998}\vspace{\fill}
+		\item[\vspace{\fill}]
+	\end{itemize}
+	
+	\columnbreak
+	
+	Nachteile:
+	\begin{itemize}
+		\item Instabile Anfangswertprobleme führen dazu, dass das Einfachschießverfahren instabil wird \cite{Ascher.1995c4}, wobei gezeigt werden kann, dass die kanonischen \gls{DGL} im linearen Fall immer an der imaginär Achse gespiegelte Eigenwerte und damit instabile Eigenmoden besitzen, selbst wenn das lineare System stabil ist \cite{KnutGraichen.2012}. 
+		\item Empfindlichkeit gegenüber schlechten Startschätzungen für $\ve{\lambda}_0^{(0)}$, sodass unter Umständen keine Lösung auf dem gesamten Integrationsintervall $[t_0, t_f]$ gefunden werden kann \cite{Ascher.1995c4}.
+		\item Eingeschränkte Anwendbarkeit für kleine Probleme aufgrund der numerischen Berechnungsschwierigkeiten \cite{Papageorgiou.2012}.
+	\end{itemize}
+\end{multicols}
+
+Dem Problem der numerischen Stabilität und dem Umstand, dass das Anfangswertproblem ggf. nicht bis zur rechten Intervallgrenze integriert werden kann, kann mit dem Mehrfachschießverfahren begegnet werden. Ähnlich zum Diskretisierungsverfahren wird das Integrationsintervall beim Mehrfachschießverfahren ebenfalls in $N$ Subintervalle aufgeteilt. Auf jedem der Subintervalle wird das Anfangswertproblem \eqref{eq:Sysdyn_z} mit $\ve{z}(t_j) = \begin{bmatrix}\ve{x}_j^T & \ve{\lambda}_j^T\end{bmatrix}^T$ und $t\in[t_j, t_{j+1}),\,j = 0,1,...,N-1$ mittels Einfachschießverfahren gelöst \cite{Gerdts.2010}. Damit die Lösung der einzelnen Anfangswertprobleme auf den Subintervallen tatsächlich eine Lösung des ursprünglichen \gls{ZPR} ist, müssen neben den Randbedingungen, die sich über die Formulierung der Optimalitätsbedingungen ergeben, noch die Stetigkeitsbedingungen \begin{equation*}
+	\begin{bmatrix}
+	\ve{z}_0(t_1,\begin{bmatrix}\ve{x}_0^T & \ve{\lambda}_0^T\end{bmatrix}^T) - \begin{bmatrix}\ve{x}_1^T & \ve{\lambda}_1^T\end{bmatrix}^T \\
+	\ve{z}_1(t_2,\begin{bmatrix}\ve{x}_1^T & \ve{\lambda}_1^T\end{bmatrix}^T) - \begin{bmatrix}\ve{x}_2^T & \ve{\lambda}_2^T\end{bmatrix}^T \\
+	\vdots \\
+	\ve{z}_{N-2}(t_{N-1},\begin{bmatrix}\ve{x}_{N-2}^T & \ve{\lambda}_{N-2}^T\end{bmatrix}^T) - \begin{bmatrix}\ve{x}_{N-1}^T & \ve{\lambda}_{N-1}^T\end{bmatrix}^T
+	\end{bmatrix} = \ve{0}
+\end{equation*}
+zwischen den einzelnen Subintervallen erfüllt sein \cite{Gerdts.2010}. Das Ergebnis des Anfangswertproblems am Intervallende des $j$-ten Subintervalls muss also dem Anfangswert der Lösung auf dem $j+1$-ten Intervall entsprechen. Mit dieser Erweiterung auf Mehrfachschießverfahren lässt sich die Robustheit der numerischen Integration auf Kosten des Rechenaufwands steigern, da der Rechenaufwand durch die Intervallunterteilung ansteigt \cite{Betts.1998}.
 \subsubsection{Indirekte Kollokationsverfahren}\label{subsubsec:Kollokationsverfahren_indirekt}
 \subsubsection{Indirekte Gradientenverfahren}\label{subsubsec:Gradientenverfahren_indirekt}
 \subsection{Direkte Lösungsverfahren}\label{subsec:Direkt}
