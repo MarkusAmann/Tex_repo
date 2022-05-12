@@ -58,19 +58,19 @@ Die allgemeine Struktur eines Optimalsteuerungsproblems lautet
 \end{aligned} \end{equation*}
 %
 Häufig werden dynamische Optimierungsprobleme (OP) mithilfe direkter Verfahren numerisch gelöst. 
-In diesem Fall wird das dynamische in ein statisches OP überführt und der endliche Lösungsvektor $\ve{u}_\text{opt} \in \mathcal{U} \subseteq \mathbb{R}^m$ berechnet. 
+In diesem Fall wird das dynamische in ein statisches OP überführt und der endliche Lösungsvektor $\uoptoft \in \mathcal{U} \subseteq \mathbb{R}^m$ berechnet. 
 Direkte Verfahren haben den Vorteil, dass Zustandsbeschränkungen leichter berücksichtigt werden können und der Konvergenzbereich größer ist. 
 Indirekte Verfahren hingegen liefern eine Einsicht in die Struktur der optimalen Lösung.
 
 In der dynamischen Optimierung hingegen werden Funktionen $\ve{u}(t)$ einer unabhängigen Variable $t$ gesucht. 
 Mithilfe der Variationsrechnung können Optimalitätsbedingungen hergeleitet werden, die ein Randwertproblem formulieren. 
-Die Lösung dieses Randwertproblems liefert in der Folge die optimale Steuertrajektorie $\ve{u}_\text{opt}(t)$. 
+Die Lösung dieses Randwertproblems liefert in der Folge die optimale Steuertrajektorie $\uoptoft$. 
 Jedoch ist das Lösen des Randwertproblems für nichtlineare Systeme häufig schwierig, weswegen auf numerische Verfahren zurückgegriffen werden muss.
 
 Um im automatisierten Fahren (AD) gezielt Fahrprofile mittels einer optimalen Trajektorienplanung erstellen zu können, ist ein tieferes Verständnis der optimalen Lösung erforderlich. 
 Mit einem direkten Verfahren ist die Interpretation der Lösung schwierig, da die Lösung aus reinen Zahlenwerten besteht. 
 Zwar könnte ein gewünschtes Fahrverhalten in definierten Fahraufgaben durch zusätzliche Terme im Gütemaß und Anpassung der Gewichte erzielt werden, jedoch ist eine Übertragung auf andere Fahraufgaben fraglich. 
-Eine parametrierte Steuertrajektorie $\ve{u}_\text{opt}(t)$ würde die Interpretation erheblich vereinfachen.
+Eine parametrierte Steuertrajektorie $\uoptoft$ würde die Interpretation erheblich vereinfachen.
 
 
 Ziele dieser Arbeit sind folgende Punkte:

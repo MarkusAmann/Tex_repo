@@ -1,1 +1,39 @@
-\chapter{Fahrzeugmodellierung}\label{cha:Modellbildung}
+\chapter{Fahrzeugmodellierung und Herleitung der kanonischen Zustandsgleichungen}\label{cha:Modellbildung}
+Dieses Kapitel dient der Modellierung der Fahrzeugbewegung und der Herleitung der aus dem Fahrzeugmodell resultieren kanonischen Zustandsgleichungen. Zunächst wird dazu die Bewegung des Fahrzeugs in Frenet-Koordinaten relativ zu einer Referenzkurve modelliert. Das Fahrzeug wird dabei als masseloser Punkt angenommen, dessen Bewegung mithilfe eines kinematischen Einspurmodells beschrieben werden kann\footnote{Es wird ausschließlich eine zweidimensionale Bewegung des Fahrzeugs parallel zur Straße berücksichtigt, weshalb die Komponente der Fahrzeughöhe bei der Beschreibung der Fahrzeugposition stets vernachlässigt wird.}. Anschließend wird das Gesamtmodell nach Gleichung \eqref{eq:Sysdyn_z} aus der Modellierung der Fahrzeugdynamik unter Anwendung der Optimalitätsbedingungen \eqref{eq:Zustandsdgl}-\eqref{eq:Steuerungsgleichung} aufgestellt. Schließlich werden verschiedene Modellbeschreibungen mit unterschiedlichem Detailgrad betrachtet und deren Nutzen für die Berücksichtigung der in Kapitel \ref{cha:Komfort} erarbeiteten Komfortmerkmale diskutiert. 
+\section{Formulierung der Fahrzeugbewegung in Frenet-Koordinaten}\label{sec:Frenet_KS}
+Oftmals ist die Beschreibung der Fahrzeugposition und dessen Bewegung in einem globalen Koordinatensystem nicht relevant. Dies gilt insbesondere bei der Fahrzeugstabilisierung und der Planung optimaler Trajektorien zur Durchführung von bestimmten Fahrmanövern. In solchen Fällen bietet sich eine Beschreibung der Fahrzeugbewegung relativ zu einer gegebenen Referenzkurve $\mathcal{R}$ an \cite{Rathgeber.2016}. In der Realität kann diese Referenzkurve beispielsweise durch Fahrbahnmarkierungen gegeben sein. Die Bewegung eines Punkts $\mathcal{P}_r$ entlang der Referenzkurve kann mithilfe der senkrecht zueinander stehenden Vektoren $\vec{\textrm{n}}(s_r)$ und $\vec{\textrm{t}}(s_r)$ beschrieben werden. Der Tangentenvektor $\vec{\textrm{t}}(s_r)$ ist dabei ausgehend von $\mathcal{P}_r$ immer tangential zu $\mathcal{R}$ ausgerichtet und der Normalenvektor $\vec{\textrm{n}}(s_r)$ steht senkrecht darauf \cite{Rathgeber.2016}. Da die Krümmung der Referenzkurve \kapparefofs\,veränderlich ist, sind die beiden Vektoren als ortsabhängige Größen bzw. in Abhängigkeit der entlang von $\mathcal{R}$ zurückgelegten Wegstrecke $s_r$ definiert \cite{Werling.2011}. Das Frenet-Koordinatensystem mit dem Fußpunkt $\mathcal{P}_r$ und den beiden Richtungsvektoren $\vec{\textrm{n}}$ und $\vec{\textrm{t}}$ wird im Folgenden auch mit $\mathcal{F}_r = \{\mathcal{P}_r, \vec{\textrm{n}}, \vec{\textrm{t}}\}$ bezeichnet. Des Weiteren wird das fahrzeugfeste Koordinatensystem $\mathcal{F}_f = \{\mathcal{P}_f, \vec{x}_f, \vec{y}_f\}$ definiert. Wie bereits bei $\mathcal{F}_r$ handelt es sich dabei um ein rechtwinkliges Koordinatensystem. Dessen Ursprung liegt im Schwerpunkt $\mathcal{P}_f$ des Fahrzeugs, welches als punktförmig angenommen wird. Die Vektoren $\vec{x}_f$ und $\vec{y}_f$ beschreiben die Bewegung aus Sicht des Fahrzeugs, wobei $\vec{x}_f$ entlang der Längsachse des Fahrzeugs nach vorne gerichtet ist und $\vec{y}_f$ entsprechend orthogonal dazu nach links orientiert ist. Wie bereits erläutert ist die Beschreibung der Fahrzeugbewegung in einem globalen Koordinatensystem für die Planung der optimalen Trajektorien nicht von Interesse. Dennoch wird ein globales Koordinaten System $\mathcal{F}_g = \{0, \vec{x}_g, \vec{y}_g\}$ definiert, welches im Ursprung liegt und dessen Richtungsvektoren $\vec{x}_g$ und $\vec{y}_g$ aus Sicht der Vogelperspektive stets nach rechts bzw. nach oben zeigen. Dieses Koordinatensystem wird insbesondere für die Visualisierung der Fahrzeugbewegung verwendet.
+
+Alle Koordinatensysteme und die Fahrzeugbewegung sind in Abbildung \ref{fig:Fahrzeugmodell} schematisch dargestellt. Durch den Pfeil, der auf einigen der Größen dargestellt ist, soll hervorgehoben werden, dass es sich dabei um vektorielle Größen handelt. 
+\begin{figure}[h]
+	\centering
+	\fontsize{24pt}{16pt}\selectfont
+	\resizebox{0.8\textwidth}{!}{
+		\import{./Bilder/Inkscape/}{Fahrzeug.pdf_tex}
+	}
+	\caption{Kinematisches Einspurmodell eines Fahrzeugs, das sich entlang einer vorgegebenen Referenzkurve $\mathcal{R}$ bewegt. }
+	\label{fig:Fahrzeugmodell}
+\end{figure}
+
+\subsection{Beschreibung der Relativbewegung}\label{subsec:Relativbewegung}
+Die Referenzkurve $\mathcal{R}$ wird durch die wegabhängige Krümmung \kapparefofs\,beschrieben. Der Winkel \psiref\, stellt dabei den Winkel zwischen $\mathcal{R}$ und dem globalen Koordinatensystem $\mathcal{F}_g$ dar. Es wird vereinfachend angenommen, dass keine Schwimmbewegungen im Fahrzeug auftreten. Das bedeutet, dass der Kurswinkel des Fahrzeugs mit dem Gierwinkel $\psi$ übereinstimmt und die Fahrzeuggeschwindigkeit $v$ immer entlang der Längsachse wirkt, also $\dot{x}_f = v$ gilt. Des Weiteren wird mit $d_r$ der seitliche Abstand zwischen dem Fahrzeug und der Referenzkurve eingeführt, wobei $d_r$ wie bereits $\vec{\textrm{n}}(s_r)$ senkrecht zur Referenzkurve orientiert ist und damit dem normalen Abstand zwischen $\mathcal{P}_f$ und $\mathcal{P}_r$ entspricht \cite{Rathgeber.2016}. Der Winkel zwischen der Bewegungsrichtung des Fahrzeugs und der Referenzkurve wird durch $\psi_r$ beschrieben und ist als \begin{equation}
+	\psi_r = \psi - \psiref
+\end{equation}
+definiert \cite{Rathgeber.2016}. Mit diesen Definitionen ergeben sich nach \cite{Rathgeber.2016} die folgenden Bewegungsgleichungen:
+\begin{align}
+	\dot{s}_r &= \frac{v\cos{\psi_r}}{1-d_r\kapparefofs} \label{eq:dsr} \\
+	\dot{d}_r &= v\sin{\psi_r} \label{eq:ddr} \\
+	\dot{\psi_r} &= \dot{\psi} -\dot{\psi}_\textrm{ref} = \kappa v - \frac{\kapparefofs v\cos{\psi_r}}{1-d_r\kapparefofs} \label{eq:dpsir}
+\end{align}
+Die Größe $\kappa$ in Gleichung \eqref{eq:dpsir} steht für die tatsächlich vom Fahrzeug durchfahrene Krümmung. Je nach Modellordnung kann diese als Systemzustand oder auch als Stellgröße verwendet werden, wobei dies in Abschnitt \ref{sec:Systemdynamik} genauer erläutert wird. Die Fahrzeugposition im globalen Koordinatensystem $\mathcal{F}_g$ kann durch Integration der Gleichungen
+\begin{align}
+\dot{x}_g &= v\cos{\psi} \\
+\dot{y}_g &= v\sin{\psi}
+\end{align}
+berechnet werden.
+
+\subsubsection{Klothoiden}\label{subsubsec:Klothoiden}
+ 
+\subsubsection{Vereinfachungen und Annahmen}\label{subsubsec:Vereinfachungen}
+Die Referenzkurve dient nicht nur der Beschreibung der Fahrzeugbewegung relativ zu dieser, sondern auch als Orientierung für die abzufahrende Strecke. Daher ist in vielen Anwendungsfällen die Annahme berechtigt, dass sich das Fahrzeug in der Nähe der Referenzkurve befindet und eine ähnliche Orientierung bezogen auf $\mathcal{F}_g$ hat. Mit kleinen Winkeln $\psi_r$ gilt $\sin{\psi_r}\approx\psi_r$ und $\cos{\psi_r}\approx 1$. Die Krümmung ist allgemein als Kehrwert des Radius definiert. Geht man davon aus, dass die kleinsten Wenderkreisradien, die mit Pkw durchfahren werden können, in etwa bei \valunit{5}{m} liegen, so beträgt die größtmögliche Krümmung \valunit{0,2}{\frac{\unit{1}}{\unit{m}}} \textbf{Quelle}. Zusammen mit der Annahme, dass neben $\psi_r$ auch $d_r$ kleine Werte annimmt, kann die Vereinfachung $1-d_r\kapparefofs\approx 1$ getroffen werden, mit der schließlich $\dot{s}_r\approx v$ folgt. Damit gibt $s_r$ die tatsächlich vom Fahrzeug zurückgelegte Strecke in sehr guter Näherung wieder. Es ist jedoch zu beachten, dass diese Annahme ihre Gültigkeit verliert, je mehr sich das Fahrzeug von der Referenzkurve entfernt, da $s_r$ dann nur noch die orthogonal auf $\mathcal{R}$ projizierte Strecke angibt. Eine weitere Vereinfachung, die in einigen Fällen Anwendung findet, ist die Annahme, dass die Krümmung der Referenzkurve \kapparefofs\,konstant ist und nicht von $s_r$ abhängt und damit $\kapparefofs=\kapparef=\textrm{konst.}$ gilt. Dies ist beispielsweise der Fall, wenn eine reine Geradeausfahrt ohne Krümmung oder eine Kreisfahrt mit konstanter Krümmung betrachtet werden soll
+
+\section{Systemdynamik}\label{sec:Systemdynamik}
