@@ -1,0 +1,80 @@
+\chapter{Analyse verschiedener Fahrszenarien und Interpretation des Lösungsraumes}\label{cha:Ergebnisse}
+In diesem Kapitel wird das im vorangegangenen Kapitel hergeleitete Gesamtsystem mit den Methoden aus Kapitel \ref{cha:Optimierung} für verschiedene Fahrszenarien gelöst. Dazu werden zunächst einige Vereinfachungen getroffen, mit denen es teilweise möglich ist, eine analytische Lösung zu finden. Die Erkenntnisse der einfacheren Szenarien werden dann verwendet, um die Lösungen komplexerer Szenarien zu interpretieren. 
+\section{Geradeausfahrt}
+Als erstes wird das Szenario einer reinen Geradeausfahrt betrachtet. Dazu wird das Fahrzeugmodell auf die Bewegung in longitudinaler Richtung reduziert und angenommen, dass sich das Fahrzeug exakt auf der Referenzkurve mit $\kapparefofs = 0$ bewegt - die querdynamischen Größen $d_r, \psi_r$ und $\kappa$ werden dabei vernachlässigt. Da sich das Fahrzeug auf der Referenzkurve befindet, ist durch $s_r$ die exakt vom Fahrzeug zurückgelegte Strecke gegeben. Die Systemdynamik des Fahrzeugs ist dann durch die Gleichungen 
+\begin{align}
+\dot{s}_r &= v \\
+\dot{v} &= a_x \\
+\dot{a}_x &= j_x \,,
+\end{align}
+vollständig beschrieben - es ergibt sich ein Integratorsystem 3. Ordnung. 
+\subsection{Lösungsraum bei energieoptimalem Gütefunktional}
+Zunächst wird die Lösung des Szenarios Geradeausfahrt für ein energieoptimales Gütefunktional bestimmt. Wird im Gütefunktional ausschließlich die Stellgröße eines Systems $\int_{t_0}^{t_f}\frac{1}{2}f_uu^2\dtint{t}$ entsprechend bestraft, so wird von einem energieoptimalen Gütefunktional gesprochen, da das Ziel der Optimierung darin besteht, die benötigte Stellgröße möglichst gering zu halten. Diese ist häufig direkt mit der aufzuwendenden Energie verknüpft \cite{KnutGraichen.2012}. Wird zusätzlich noch die Endzeit als Gütekriterium bestraft, so ergibt sich in dem vereinfachten Szenario Geradeausfahrt das Gütefunktional
+\begin{equation}
+	J(\ve{x},\ve{u},t,t_f) = t_f + \int_{t_0}^{t_f}\frac{1}{2}f_uu^2\dtint{t}\,.
+\end{equation}
+Diese Formulierung eines Integratorsystems mit einem energieoptimalen Gütefunktional soll nachfolgend verallgemeinert betrachtet werden. Wird die Stellgröße eines Integratorsystems mit der Ordnung $n$ als die $n$-te Ableitung des ersten Zustands gewählt, kann das Gütefunktional als 
+\begin{equation}
+J(\ve{x},\ve{u},t,t_f) = t_f + \int_{t_0}^{t_f}\frac{1}{2}f_u{x_1^{(n)}}^2\dtint{t}\,.
+\end{equation}
+geschrieben werden, wobei der eingeklammerte Hochindex $(n)$ die $n$-te Ableitung bezeichnet. Die Hamilton-Funktion ergibt sich zu
+\begin{equation}
+H(\ve{x},\ve{u},\ve{\lambda},t) = \frac{1}{2}f_u{x_1^{(n)}}^2 + \lambda_1x_1^{(1)} + \lambda_2x_1^{(2)} + ... + \lambda_nx_1^{(n)}
+\end{equation}
+und die adjungierten \gls{DGL} lauten dann  
+\begin{align}
+	\dot{\lambda_1} &= 0 \\
+	\dot{\lambda_2} &= -\lambda_1 \\
+	&\vdots \\
+	\dot{\lambda_n} &= -\lambda_{n-1}\,.
+\end{align}
+Daraus wird ersichtlich, dass sich mit $x_1^{(n)} = -\frac{\lambda_n}{f_u}$ alle Zeitverläufe durch Integration ausgehend von $\lambda_1 = \textrm{konst.}$ bestimmen lassen. Dabei erhält man Polynome deren Grad mit jeder Integration um eins steigt. Bei einem System $n$-ter Ordnung müssen insgesamt $2n$ Integrationen durchgeführt werden, sodass die Lösung von $x_1$ ein Polynom vom Grad $2n-1$ darstellt. Der höchste Polynomgrad ist also immer ungerade. Der Lösungsraum lässt sich wie folgt geschlossen angeben: 
+\begin{align}
+\begin{split}
+\lambda_1 &= c_1 
+\end{split}
+\\
+\begin{split}
+\lambda_2 &= -c_1t + c_2 
+\end{split}
+\\
+\begin{split}
+&\vdots 
+\end{split}
+\\
+\begin{split}
+\lambda_n &= (-1)^{n-1}\frac{c_1}{(n-1)!}t^{n-1} + (-1)^{n-2}\frac{c_2}{(n-2)!}t^{n-2} + ... + (-1)^1c_{n-1}t + c_n 
+\end{split}
+\\
+\begin{split}
+x_n &= (-1)^n\frac{c_1}{f_u(n)!}t^{n} + (-1)^{n-1}\frac{c_2}{(n-1)!}t^{n-1} + ... - \frac{c_{n}}{f_u}t + x_{n,0} 
+\end{split}
+\\
+\begin{split}
+x_{n-1} &= (-1)^n\frac{c_1}{f_u(n+1)!}t^{n+1} + (-1)^{n-1}\frac{c_2}{(n)!}t^{n} + ... - \frac{c_{n}}{2f_u}t^2 + x_{n,0}t + x_{n-1,0} 
+\end{split}
+\\
+\begin{split}
+&\vdots 
+\end{split}
+\\
+\begin{split}
+x_{1} &= (-1)^n\frac{c_1}{f_u(2n-1)!}t^{2n-1} + (-1)^{n-1}\frac{c_2}{(2n-2)!}t^{2n-2} + ... - \frac{c_{n}}{f_u(n)!}t^n + ... \\
+&\qquad ... + \frac{x_{n,0}}{(n-1)!}t^{n-1} + \frac{x_{n-1,0}}{(n-2)!}t^{n-2} + ... + x_{2,0}t + x_{1,0}
+\end{split}
+\end{align}
+\subsubsection{Analytische Lösung}
+\subsection{Lösungsraum bei Gütefunktional mit Bestrafung von Längsruck und -beschleunigung}
+\subsubsection{Analytische Lösung}
+\subsubsection{Beschränkung der Längsbeschleunigung}
+\subsection{Anfahren an eine Ampel bei bekannter Rotphase}
+\section{Spurwechsel}
+\subsection{Komfortgewinn durch variable Gewichtung der Querabweichung}
+\section{Kreisfahrt mit konstanter Krümmung}
+\subsection{Vernachlässigung der Querdynamik}
+\subsubsection{Ruhelage}
+\subsection{Berücksichtung der Querdynamik}
+\subsubsection{Ruhelage}
+\section{Klothoide mit konstanter Krümmungsänderung}
+\section{Gerade-Kurvenkombination}
+\section{Rundkurs}

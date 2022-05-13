@@ -24,9 +24,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="576.5"
-     inkscape:cy="291"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="534.21917"
+     inkscape:cy="559.32146"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-1928"
@@ -745,6 +745,56 @@
        apply_no_weight="true"
        apply_with_weight="true"
        only_selected="false" />
+    <marker
+       style="overflow:visible"
+       id="StopL-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="StopL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,5.65 V -5.65"
+         id="path10026-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker1305"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="StopL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:none;fill-opacity:0.75;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,5.65 V -5.65"
+         id="path1303" />
+    </marker>
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect13024-2-6-1-12-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect13024-2-6-1-12-1-1"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
   </defs>
   <g
      inkscape:label="Bild"
@@ -940,12 +990,6 @@
        id="path11977"
        inkscape:path-effect="#path-effect11979"
        inkscape:original-d="m 143.23043,62.650332 c 26.37279,-19.945018 54.08,-38.125571 81.11974,-57.188713" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 163.08516,137.863 c 5.71798,8.22848 11.45901,16.49014 17.18853,24.73522"
-       id="path13022-2-5"
-       inkscape:path-effect="#path-effect13024-2-3"
-       inkscape:original-d="m 163.08516,137.863 c 5.73905,8.21384 11.45891,16.49021 17.18853,24.73522" />
     <g
        id="g1545"
        transform="translate(-2.8490832,0.92691664)">
@@ -1020,22 +1064,16 @@
        inkscape:original-d="m 143.23043,62.650332 c 5.46174,-3.801585 10.92354,-7.603361 16.38534,-11.405313" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 177.42258,169.52309 c -0.25463,-2.02435 -0.50926,-4.04872 0.96655,-4.47563 1.47581,-0.42692 4.68176,0.74352 6.25394,0.21222 1.57218,-0.53129 1.51068,-2.76426 1.44917,-4.99725"
+       d="m 163.21567,164.84396 c 0.24153,-2.02595 0.48306,-4.05192 2.01829,-4.10999 1.53522,-0.0581 4.36385,1.85161 6.01779,1.71551 1.65394,-0.1361 2.13324,-2.31789 2.61254,-4.4997"
        id="path15208"
        inkscape:path-effect="#path-effect15210"
-       inkscape:original-d="m 177.42258,169.52309 c -0.25445,-2.02437 -0.50907,-4.04874 -0.76389,-6.0731 3.20628,1.17048 6.41223,2.34092 9.61807,3.5114 -0.0696,-2.23278 -0.12282,-4.46598 -0.18452,-6.69896" />
+       inkscape:original-d="m 163.21567,164.84396 c 0.24171,-2.02593 0.48325,-4.0519 0.7246,-6.07791 2.82895,1.90979 5.65758,3.81947 8.48611,5.72915 0.4714,-2.18356 0.95879,-4.36357 1.43791,-6.54542" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 178.89424,171.43535 c -0.25463,-2.02435 -0.50926,-4.04871 0.96655,-4.47563 1.47581,-0.42692 4.68177,0.74352 6.25394,0.21223 1.57217,-0.53129 1.51067,-2.76426 1.44916,-4.99726"
+       d="m 164.18224,167.05491 c 0.24153,-2.02595 0.48306,-4.05192 2.01828,-4.11 1.53522,-0.0581 4.36386,1.85161 6.01779,1.71551 1.65393,-0.13609 2.13323,-2.31788 2.61254,-4.4997"
        id="path15208-9"
        inkscape:path-effect="#path-effect15210-2"
-       inkscape:original-d="m 178.89424,171.43535 c -0.25445,-2.02437 -0.50907,-4.04873 -0.7639,-6.0731 3.20628,1.17049 6.41224,2.34092 9.61807,3.51139 -0.0696,-2.23276 -0.12281,-4.46596 -0.18452,-6.69895" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 185.65429,170.28181 c 4.14003,5.96706 8.29676,11.9582 12.44515,17.93732"
-       id="path13022-2-5-5"
-       inkscape:path-effect="#path-effect13024-2-3-9"
-       inkscape:original-d="m 185.65429,170.28181 c 4.15529,5.95647 8.29667,11.95826 12.44515,17.93732" />
+       inkscape:original-d="m 164.18224,167.05491 c 0.24171,-2.02593 0.48325,-4.0519 0.72459,-6.07792 2.82894,1.9098 5.65759,3.81947 8.48611,5.72914 0.47139,-2.18354 0.9588,-4.36355 1.43791,-6.54541" />
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,361.93203,-174.00021)"
@@ -1043,7 +1081,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4581">$\vec{y}_g$</tspan></text>
+         id="tspan1987">$\vec{y}_g$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,385.91168,-146.73263)"
@@ -1051,7 +1089,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-8);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4583">$\vec{x}_g$</tspan></text>
+         id="tspan1989">$\vec{x}_g$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,466.84398,-256.60727)"
@@ -1059,7 +1097,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4585">$\vec{y}_f$</tspan></text>
+         id="tspan1991">$\vec{y}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,491.78797,-248.4049)"
@@ -1067,7 +1105,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-7);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4587">$\vec{x}_f$</tspan></text>
+         id="tspan1993">$\vec{x}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,568.9689,-308.55817)"
@@ -1075,7 +1113,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-78);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4589">$\vec{v}$</tspan></text>
+         id="tspan1995">$\vec{v}$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,474.76716,-198.6833)"
@@ -1083,7 +1121,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4591">$\vec{\textrm{n}}(s_r)$</tspan></text>
+         id="tspan1997">$\vec{\textrm{n}}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,539.57061,-183.80293)"
@@ -1091,7 +1129,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-4);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4593">$\vec{\textrm{t}}(s_r)$</tspan></text>
+         id="tspan1999">$\vec{\textrm{t}}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,584.23412,-174.24194)"
@@ -1099,15 +1137,15 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4595">$\mathcal{R}$</tspan></text>
+         id="tspan2001">$\mathcal{R}$</tspan></text>
     <text
        xml:space="preserve"
-       transform="matrix(0.27001378,0,0,0.26998463,533.60751,-143.43243)"
+       transform="matrix(0.27001378,0,0,0.26998463,518.26624,-145.86458)"
        id="text41186-0-9"
-       style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;stroke-width:0.979941;shape-inside:url(#rect41188-6-3)"><tspan
+       style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4597">$1/\kappa_{\textrm{ref}}(s_r)$</tspan></text>
+         id="tspan2003">$1/\kappa_{\textrm{ref}}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,507.90634,-170.7495)"
@@ -1115,7 +1153,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4599">$s_r$</tspan></text>
+         id="tspan2005">$s_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,496.4089,-217.24523)"
@@ -1123,7 +1161,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-3-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4601">$d_r$</tspan></text>
+         id="tspan2007">$d_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,504.20979,-180.7524)"
@@ -1131,7 +1169,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4603">$\mathcal{P}_r$</tspan></text>
+         id="tspan2009">$\mathcal{P}_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,475.80286,-238.18343)"
@@ -1139,7 +1177,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-1);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4605">$\mathcal{P}_f$</tspan></text>
+         id="tspan2011">$\mathcal{P}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,547.98936,-282.55955)"
@@ -1147,7 +1185,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4607">$\psi$</tspan></text>
+         id="tspan2013">$\psi$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,534.87415,-169.21771)"
@@ -1155,7 +1193,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6-7);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4609">$\psi_{\textrm{ref}}$</tspan></text>
+         id="tspan2015">$\psi_{\textrm{ref}}$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,531.46393,-268.24621)"
@@ -1163,7 +1201,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4611">$\psi_r$</tspan></text>
+         id="tspan2017">$\psi_r$</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-0-4)"
        d="m 163.15567,137.816 c 10.71588,-2.66196 21.47514,-5.33469 32.21274,-8.00205"
@@ -1177,7 +1215,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-99);display:inline;stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan4613">$0$</tspan></text>
+         id="tspan2019">$0$</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-0-4-3)"
        d="m 163.01727,137.75896 c -2.56754,-9.83909 -5.14553,-19.71822 -7.7183,-29.57735"
@@ -1190,5 +1228,17 @@
        id="path13022-2-7-0-9"
        inkscape:path-effect="#path-effect13024-2-6-1-12"
        inkscape:original-d="M 163.08516,137.863 C 156.41292,112.85852 149.84899,87.721187 143.23043,62.650332" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 168.38129,159.09953 c -1.81847,-7.08215 -3.64414,-14.1924 -5.46622,-21.28862"
+       id="path13022-2-7-0-9-1"
+       inkscape:path-effect="#path-effect13024-2-6-1-12-1"
+       inkscape:original-d="m 168.38129,159.09953 c -1.83694,-7.07741 -3.64406,-14.19242 -5.46622,-21.28862" />
+    <path
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.599999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 175.89134,187.72978 c -1.83848,-7.16062 -3.68426,-14.34964 -5.52639,-21.52447"
+       id="path13022-2-7-0-9-1-1"
+       inkscape:path-effect="#path-effect13024-2-6-1-12-1-1"
+       inkscape:original-d="m 175.89134,187.72978 c -1.85717,-7.15582 -3.68418,-14.34966 -5.52639,-21.52447" />
   </g>
 </svg>

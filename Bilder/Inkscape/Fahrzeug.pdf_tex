@@ -62,7 +62,7 @@
     \put(0.45011221,0.32381553){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vec{\textrm{n}}(s_r)$\end{tabular}}}}%
     \put(0.66830565,0.27371327){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vec{\textrm{t}}(s_r)$\end{tabular}}}}%
     \put(0.81868784,0.24152138){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathcal{R}$\end{tabular}}}}%
-    \put(0.64822787,0.13778566){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1/\kappa_{\textrm{ref}}(s_r)$\end{tabular}}}}%
+    \put(0.59657376,0.14597472){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$1/\kappa_{\textrm{ref}}(s_r)$\end{tabular}}}}%
     \put(0.56169194,0.22976233){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$s_r$\end{tabular}}}}%
     \put(0.52298002,0.38631361){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$d_r$\end{tabular}}}}%
     \put(0.54924565,0.26344213){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathcal{P}_r$\end{tabular}}}}%
