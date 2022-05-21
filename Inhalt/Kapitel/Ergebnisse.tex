@@ -10,7 +10,7 @@ Als erstes wird das Szenario einer reinen Geradeausfahrt betrachtet. Dazu wird d
 \end{align}
 vollständig beschrieben - es ergibt sich ein Integratorsystem 3. Ordnung. Die einzige Stellgröße ist in diesem Fall der Längsruck $j_x$.
 
-\subsection{Lösungsraum bei energieoptimalem Gütefunktional}
+\subsection{Lösungsraum bei energieoptimalem Gütefunktional}\label{subsec:Lösungsraum_Geradeausfahrt}
 Zunächst wird die Lösung des Szenarios Geradeausfahrt für ein energieoptimales Gütefunktional bestimmt. Wird im Gütefunktional die Stellgröße eines Systems bestraft, so wird von einem energieoptimalen Gütefunktional gesprochen, da das Ziel der Optimierung darin besteht, die benötigte Stellgröße möglichst gering zu halten. Diese ist häufig direkt mit der aufzuwendenden Energie verknüpft \cite{KnutGraichen.2012}. Wird zusätzlich noch die Endzeit als Gütekriterium bestraft, so ergibt sich in dem vereinfachten Szenario Geradeausfahrt das Gütefunktional
 \begin{equation}
 	J(\ve{x},\ve{u},t,t_f) = t_f + \int_{t_0}^{t_f}\frac{1}{2}f_uu^2\dtint{t} = t_f + \int_{t_0}^{t_f}\frac{1}{2}\fjx j_x^2\dtint{t}\,.
@@ -301,11 +301,41 @@ Als Abschluss dieses Szenarios soll der Blick nochmal speziell auf den Bremsvorg
 	\includegraphics[width=0.9\linewidth]{./Bilder/Ergebnisse/Geradeausfahrt/Ampel/v_5_v_15/va_fa_variabel.eps}
 	\caption{Geschwindigkeits- und Beschleunigungstrajektorien für vorausschauende und menschliche Planung für unterschiedliche Gewichtungen der Beschleunigung bei höherer Startgeschwindigkeit.}
 	\label{fig:va_fa_variabel}
-\end{figure} 
- 
+\end{figure}  
 
 \section{Spurwechsel}\label{sec:Spurwechsel}
-Bisher wurde ausschließlich die Längsdynamik des Fahrzeugs bei den untersuchten Szenarien berücksichtigt. Das nachfolgend untersuchte Szenario Spurwechsel stellt insofern eine Erweiterung der bisher betrachteten Szenarien dar, als dass nun unter Hinzunahme der querdynamischen Größen das Gesamtmodell des Fahrzeugs verwendet wird. Dadurch lassen sich Spurwechsel beschreiben und hinsichtlich der Querdynamik analysieren. 
+Bisher wurde ausschließlich die Längsdynamik des Fahrzeugs bei den untersuchten Szenarien berücksichtigt. Das nachfolgende Szenario Spurwechsel stellt insofern eine Erweiterung der bisher betrachteten Szenarien dar, als dass nun unter Hinzunahme der querdynamischen Größen das Gesamtmodell des Fahrzeugs verwendet wird. Dadurch lassen sich Spurwechsel beschreiben und hinsichtlich der Querdynamik analysieren. 
+
+Bei der Analyse des Spurwechsels werden nachfolgend zwei unterschiedliche Modellbeschreibungen untersucht. Zum einen wird das Fahrzeugmodell mit den Stellgrößen $\ve{u} = [j_x,\,\dot{\kappa}]^T$, wie es in Kapitel \ref{cha:Modellbildung} vorgestellt wurde, verwendet. Zum anderen wird die Systembeschreibung mit $\ve{u} = [j_x,\,\kappa]^T$ betrachtet. Letztere hat aus Sicht des Fahrkomforts den Nachteil, dass der Querruck aufgrund der geringeren Modellordnung in der Querdynamik nicht berücksichtigt werden kann. 
+
+\subsection{Formulierung des Optimierungsproblems}\label{subsec:Gütefunktional_Spurwechsel}
+Zunächst wird die Problemformulierung und das daraus resultierende Gütefunktional für die detailliertere Modellbeschreibung erläutert. Der Spurwechsel lässt sich ähnlich wie das zuvor analysierte Ampel-Szenario durch eine Geradeausfahrt mit einer internen \gls{GNB} beschreiben und kann daher wieder in zwei Abschnitte unterteilt werden. Zusätzlich kommt beim Spurwechsel jedoch noch eine Parameteränderung hinzu, die über eine Diskontinuität in der Systembeschreibung berücksichtigt werden kann, wobei die Diskontinuität streng genommen nicht die eigentlich Fahrzeugdynamik betrifft, sondern das Gütefunktional und damit die adjungierten \gls{DGL} verändert. Das Optimierungsproblem lässt sich wie folgt formulieren:
+\begin{align}
+J(\ve{x},\ve{u},t,t_1) &= t_f + \int_{t_0}^{t_f}\frac{1}{2}\fdr(d_r - d_{\textrm{off}})^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fay a_y^2\dtint{t} \\
+\textrm{u.B.v.} \quad \xoftzero &= \xzero \\
+s_r(t_1) &= s_1 \\
+s_r(t_f) &= s_f \\
+d_r(t_f) &= d_1 \label{eq:Spurwechsel_Endbedingung_dr}\\
+\psi_r(t_f) &= 0 \label{eq:Spurwechsel_Endbedingung_psir}\\
+\kappa(t_f) &= 0 \label{eq:Spurwechsel_Endbedingung_kappa}\\
+d_{\textrm{off}} &= 0,\quad t<t_1 \label{eq:Spurwechsel_interneGNB_dr_zero}\\
+d_{\textrm{off}} &= d_1,\quad t\geq t_1 \label{eq:Spurwechsel_interneGNB_dr_d1}
+\end{align}
+Neben den komfortrelevanten Größen Ruck, Beschleunigung und Reisezeit, wird im Gütefunktional zusätzlich die seitliche Abweichung von der Referenzkurve bestraft. Dadurch wird erreicht, dass sich das Fahrzeug trotz Querdynamik immer in der Nähe der Referenzkurve befindet. Diese wird auch in diesem Szenario wieder durch eine krümmungsfreie Gerade beschrieben. Der eigentliche Spurwechsel wird dadurch erreicht, dass die seitliche Abweichung bezüglich eines vorgegebenen Offsets $d_{\textrm{off}}$ bestraft wird, welcher durch die Gleichungen \eqref{eq:Spurwechsel_interneGNB_dr_zero} und \eqref{eq:Spurwechsel_interneGNB_dr_d1} beschrieben wird und die stellt angesprochene Parameteränderung darstellt. Durch die Endbedingungen \eqref{eq:Spurwechsel_Endbedingung_dr}-\eqref{eq:Spurwechsel_Endbedingung_kappa} ist gewährleistet, dass die seitliche Abweichung zur neuen Fahrspur sowie der Winkelfehler bezüglich der Referenzkurve verschwinden und sich die Krümmung, die zum Durchführen des Spurwechsels notwendig ist, wieder bei Null einstellt. Die Forderung nach Stetigkeit der Fahrzeugzustände führt wie bereits beim Ampel-Szenario zur Stetigkeitsbedigungen und zur ersten Weierstrass-Erdmannschen-Eckenbedingung. Da beim Spurwechsel die zeitliche Optimalität sowohl für dne Endzeitpunkt $t_f$ als auch für die Zeitpunkt der internen Übergangsbedingung erreicht werden soll, wird $t_1$ in diesem Szenario frei gelassen, sodass auch die zweite Weierstrass-Erdmannschen-Eckenbedingung 
+\begin{equation}
+H(\ve{x},\ve{u},\ve{\lambda},t)_{|t=t_1^-} = H(\ve{x},\ve{u},\ve{\lambda},t)_{|t=t_1^+} 
+\end{equation}
+gilt. Bei der reduzierten Systembeschreibung, in der die Krümmung als Stellgröße verwendet wird, lässt sich das Optimalsteuerungsproblem analog formulieren, allerdings fallen dann die Bestrafung des Querrucks im Gütefunktional und die Endbedingung für die Krümmung \eqref{eq:Spurwechsel_Endbedingung_kappa} weg. Nachfolgend werden die Lösungen der optimalen Trajektorien für realistische Spurwechsel auf Autobahnen für beide Systembeschreibungen analysiert.
+
+\subsection{Optimale Spurwechseltrajektorien}\label{subsec:Spurwechseltrajektorien}
+Die Startgeschwindigkeit des Spurwechsels wird zu $v_0 = \valunit{30}{\frac{\unit{m}}{\unit{s}}} = \valunit{108}{\frac{\unit{km}}{\unit{h}}}$ gewählt. Die beim Spurwechsel geforderte Querablage beträgt mit $d_{\textrm{off}} = \valunit{3{,}5}{m}$ einer üblichen Fahrstreifenbreite auf Autobahnen \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Zudem beginnt der Spurwechsel mit $a_0 = 0$ und $\kappa_0 = 0$ aus einem beschleunigungs- und krümmungsfreien Zustand. Für den Spurwechsel wurde eine Gesamtstrecke von $s_f = \valunit{300}{m}$ vorgegeben, wobei nach der Hälfte, also bei $s_1 = \valunit{150}{m}$, nicht mehr der seitliche Abstand bezogen auf den ursprünglichen Fahrstreifen, sondern zum neuen Fahrstreifen im Gütefunktional berücksichtigt wird. Der Spurwechsel für das beschriebene Szenario ist in Abbildung \ref{fig:Spurwechsel_Vogelperspektive} dargestellt, wobei die gewählten Achsen den globalen $x_g$- und $y_g$-Koordinaten entsprechen und somit der Verlauf des Manövers aus der Vogelperspektive dargestellt ist. Zunächst wird die Längsdynamik des Spurwechsels betrachtet. In Abbildung \ref{fig:s300_v30} sind die Verläufe der Strecke, Geschwindigkeit, Beschleunigung, und des Rucks dargestellt. 
+\begin{figure}[h] 
+	\centering
+	\includegraphics[width=\linewidth]{./Bilder/Ergebnisse/Geradeausfahrt/Spurwechsel/s300_v30.eps}
+	\caption{Trajektorien der Längsdynamik eines Spurwechsels für die beiden Modellbeschreibungen unterschiedlicher Ordnung im Vergleich zur Lösung der Geradeausfahrt ohne Spurwechsel.}
+	\label{fig:s300_v30}
+\end{figure} 
+Die Abbildung zeigt, dass die unterschiedliche Modellordnung der Querdynamik keinen wesentlichen Einfluss auf die Längsdynamik hat, da die Verläufe nahezu identisch sind. Außerdem ist zu erkennen, dass das längsdynamische Verhalten beim Spurwechsel in guter Näherung dem Verhalten der reinen Geradeausfahrt entspricht, weshalb bei Spurwechseln Längs- und Querdynamik getrennt von einander betrachtet werden können. Dies lässt sich damit begründen, dass das Verhalten bei Spurwechseln durch die Längsdynamik dominiert wird - während in Querrichtung lediglich eine Strecke von \valunit{3{,}5}{m} zurückgelegt wird, wird bei der hier gewählten Parametrierung in Längsrichtung eine Strecke von \valunit{300}{m} zurückgelegt, sodass dies näherungsweise einer reinen Geradeausfahrt entspricht\footnote{Für dynamischere Spurwechsel, wie sie beispielsweise bei Not- oder Ausweichmanövern auftreten, verliert diese Näherung desto mehr ihre Gültigkeit, je größer der Einfluss der Querdynamik.}. Diese Eigenschaft machen sich die Autoren von \cite{Rathgeber.2016} und \cite{Werling.2011} zu nutze und verfolgen einen Ansatz, bei dem die Quer- und Längsdynamik jeweils als voneinander unabhängige Integratorsysteme betrachtet werden. Dabei ergibt sich ähnlich zur Herleitung in \ref{subsec:Lösungsraum_Geradeausfahrt} für beide Richtungen ein Lösungsraum, der aus Polynomen besteht. Je nachdem, welche Modellordnung der Querdynamik gewählt wird, ergibt sich ein anderes Verhalten, was sich insbesondere im Querruck niederschlägt. 
 
 \subsection{Komfortgewinn durch variable Gewichtung der Querabweichung}
 \section{Kreisfahrt mit konstanter Krümmung}
