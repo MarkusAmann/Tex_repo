@@ -126,6 +126,7 @@
 	% Befehl gesetzt werden.
 	\newcommand*{\textcompstdfont}[1]{{\fontfamily{cmr} \fontseries{m} \fontshape{n} \selectfont #1}}
 
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
 % Makros für Variablen
 % ================================
 \newcommand*{\amax}{\ensuremath{a_{\textrm{max}}}}
@@ -278,3 +279,9 @@
 \newcommand*{\fjx}{\ensuremath{f_{j_x}}}
 \newcommand*{\fjy}{\ensuremath{f_{j_y}}}
 \newcommand*{\fdr}{\ensuremath{f_{d_r}}}
+
+% Makros für Ruhelagen Variablen
+% ================================
+\newcommand*{\vRL}{\ensuremath{v_{\textrm{RL}}}}
+\newcommand*{\ayRL}{\ensuremath{a_{y,\textrm{RL}}}}
+\newcommand*{\loneRL}{\ensuremath{\lambda_{1,\textrm{RL}}}}
