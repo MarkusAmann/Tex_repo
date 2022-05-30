@@ -37,7 +37,7 @@ wobei $j_x$ den Längsruck bezeichnet. Analog zu $\kappa$ gilt für die Längsbe
 berechnet werden.
 
 \subsubsection{Klothoiden}\label{subsubsec:Klothoiden}
-Übergänge zwischen Kurven oder Geraden und Kurven im Straßenverkehr sind im Allgemeinen als Klothoiden angelegt, deren Krümmung sich proportional zur Länge der Kurve verhält \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die Verwendung von Klothoiden im Straßenbau hat den Vorteil, dass sprunghafte Lenkänderungen vermieden und dadurch weiche und stetige Lenkbewegungen ermöglicht werden \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Dies hat zur Folge, dass sich die Querbeschleunigung kontinuierlich ändert und Ruck behaftete Änderungen vermieden werden \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die Krümmung einer Klothoide lässt sich alllgemein als 
+Übergänge zwischen Kurven oder Geraden und Kurven im Straßenverkehr sind im Allgemeinen als Klothoiden angelegt, deren Krümmung sich proportional zur Länge der Kurve verhält \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die Verwendung von Klothoiden im Straßenbau hat den Vorteil, dass sprunghafte Lenkänderungen vermieden und dadurch weiche und stetige Lenkbewegungen ermöglicht werden \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Dies hat zur Folge, dass sich die Querbeschleunigung kontinuierlich ändert und Ruck behaftete Änderungen vermieden werden \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die Krümmung einer Klothoide lässt sich allgemein als 
 \begin{equation}
 	\kapparefofs = \dkapparef s_r + \kapparefzero
 \end{equation}
@@ -45,10 +45,10 @@ angeben \cite{Rathgeber.2016}. Mit \kapparefzero~wird dabei die Anfangskrümmung
 \begin{equation}
 	\dkapparef = \frac{1}{A^2}\,,\quad\textrm{mit}\, \frac{R}{3}\leq A\leq R
 \end{equation}
-gegeben, wobei $A$ als Klothoidenparameter bezeichnet wird und $R$ den kleinsten Radius der zu durchfahrenden Klothoide angibt \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die zulässigen Minimalradien von Autobahnkurven sind abhängig von der erlaubten Geschwindigkeit auf dem jeweiligen Streckenabschnitt festgelegt. Im Bereich hoher Geschwindigkeiten ($\valunit{80}{\frac{\unit{km}}{\unit{h}}}\leq v\leq \valunit{130}{\frac{\unit{km}}{\unit{h}}}$), die beispielsweise bei langen Kurven auf Autobahnen vorkommen, ergeben sich damit Werte für den minimalen Klothoidenparameter von $90\leq A\leq 300$ \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Für den bei Autobahnausfahrten relevanten niedrigeren Geschwindigkeitsbereich ($\valunit{30}{\frac{\unit{km}}{\unit{h}}}\leq v\leq \valunit{80}{\frac{\unit{km}}{\unit{h}}}$), lässt sich der Bereich analog zu $10\leq A\leq 83,33$ bestimmen \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}.
+gegeben, wobei $A$ als Klothoidenparameter bezeichnet wird und $R$ den kleinsten Radius der zu durchfahrenden Klothoide angibt \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Die zulässigen Minimalradien von Autobahnkurven sind abhängig von der erlaubten Geschwindigkeit auf dem jeweiligen Streckenabschnitt festgelegt. Im Bereich hoher Geschwindigkeiten ($\valunit{80}{\frac{\unit{km}}{\unit{h}}}\leq v\leq \valunit{130}{\frac{\unit{km}}{\unit{h}}}$), die beispielsweise bei langen Kurven auf Autobahnen vorkommen, ergeben sich damit Werte für den minimalen Klothoidenparameter von $\valunit{90}{m}\leq A\leq \valunit{300}{m}$ \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}. Für den bei Autobahnausfahrten relevanten niedrigeren Geschwindigkeitsbereich ($\valunit{30}{\frac{\unit{km}}{\unit{h}}}\leq v\leq \valunit{80}{\frac{\unit{km}}{\unit{h}}}$), lässt sich der Bereich analog zu $\valunit{10}{m}\leq A\leq \valunit{83{,}33}{m}$ bestimmen \cite{ForschungsgesellschaftfurStraenundVerkehrswesen.2008}.
  
 \subsubsection{Vereinfachungen und Annahmen}\label{subsubsec:Vereinfachungen}
-Die Referenzkurve dient nicht nur der Beschreibung der Fahrzeugbewegung relativ zu dieser, sondern auch als Orientierung für die abzufahrende Strecke. Daher ist in vielen Anwendungsfällen die Annahme berechtigt, dass sich das Fahrzeug in der Nähe der Referenzkurve befindet und eine ähnliche Orientierung bezogen auf $\mathcal{F}_g$ hat. Mit kleinen Winkeln $\psi_r$ gilt $\sin{\psi_r}\approx\psi_r$ und $\cos{\psi_r}\approx 1$. Die Krümmung ist allgemein als Kehrwert des Radius definiert. Geht man davon aus, dass die kleinsten Wenderkreisradien, die mit Pkw durchfahren werden können, in etwa bei \valunit{5}{m} liegen, so beträgt die größtmögliche Krümmung \valunit{0,2}{\frac{\unit{1}}{\unit{m}}} \textbf{Quelle}. Zusammen mit der Annahme, dass neben $\psi_r$ auch $d_r$ kleine Werte annimmt, kann die Vereinfachung $1-d_r\kapparefofs\approx 1$ getroffen werden, mit der schließlich $\dot{s}_r\approx v$ folgt. Damit gibt $s_r$ die tatsächlich vom Fahrzeug zurückgelegte Strecke in sehr guter Näherung wieder. Es ist jedoch zu beachten, dass diese Annahme ihre Gültigkeit verliert, je weiter sich das Fahrzeug von der Referenzkurve entfernt, da $s_r$ dann nur noch die orthogonal auf $\mathcal{R}$ projizierte Strecke angibt. Eine weitere Vereinfachung, die in einigen Fällen Anwendung findet, ist die Annahme, dass die Krümmung der Referenzkurve \kapparefofs~konstant ist und nicht von $s_r$ abhängt und damit $\kapparefofs=\kapparefzero$ gilt. Dies ist beispielsweise der Fall, wenn eine reine Geradeausfahrt ohne Krümmung oder eine Kreisfahrt mit konstanter Krümmung betrachtet werden soll
+Die Referenzkurve dient nicht nur der Beschreibung der Fahrzeugbewegung relativ zu dieser, sondern auch als Orientierung für die abzufahrende Strecke. Daher ist in vielen Anwendungsfällen die Annahme berechtigt, dass sich das Fahrzeug in der Nähe der Referenzkurve befindet und eine ähnliche Orientierung bezogen auf $\mathcal{F}_g$ hat. Mit kleinen Winkeln $\psi_r$ gilt $\sin{\psi_r}\approx\psi_r$ und $\cos{\psi_r}\approx 1$. Die Krümmung ist allgemein als Kehrwert des Radius definiert. Geht man davon aus, dass die kleinsten Wenderkreisradien, die mit Pkw durchfahren werden können, in etwa bei \valunit{5}{m} liegen, so beträgt die größtmögliche Krümmung \valunit{0{,}2}{\frac{\unit{1}}{\unit{m}}} \textbf{Quelle}. Zusammen mit der Annahme, dass neben $\psi_r$ auch $d_r$ kleine Werte annimmt, kann die Vereinfachung $1-d_r\kapparefofs\approx 1$ getroffen werden, mit der schließlich $\dot{s}_r\approx v$ folgt. Damit gibt $s_r$ die tatsächlich vom Fahrzeug zurückgelegte Strecke in sehr guter Näherung wieder. Es ist jedoch zu beachten, dass diese Annahme ihre Gültigkeit verliert, je weiter sich das Fahrzeug von der Referenzkurve entfernt, da $s_r$ dann nur noch die orthogonal auf $\mathcal{R}$ projizierte Strecke angibt. Eine weitere Vereinfachung, die in einigen Fällen Anwendung findet, ist die Annahme, dass die Krümmung der Referenzkurve \kapparefofs~konstant ist und nicht von $s_r$ abhängt und damit $\kapparefofs=\kapparefzero$ gilt. Dies ist beispielsweise der Fall, wenn eine reine Geradeausfahrt ohne Krümmung oder eine Kreisfahrt mit konstanter Krümmung betrachtet werden soll
 
 \section{Adjungierte \gls{DGL} und dynamisches Gesamtmodell}\label{sec:Systemdynamik}
 Nachdem die Systemdynamik in Frenet-Koordinaten und die Beschreibung der Referenzkurve erläutert wurden, wird nun ein Gütefunktional der Form \eqref{eq:J_dyn} eingeführt, das zum Aufstellen der Hamilton-Funktion und zur Herleitung der Gesamtsystemdynamik verwendet wird und dabei die in Kapitel \ref{cha:Komfort} herausgearbeiteten Kriterien zur Bewertung des Fahrkomforts verwendet.
@@ -57,7 +57,11 @@ Die als komfortrelevant erachtete Reisezeit kann über die freie Endzeit $t_f$ d
 \begin{equation}
 	J(\xoft,\uoft,t,t_f) = t_f + \int_{t_0}^{t_f} \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fay a_y^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fdr d_r^2~\dtint{t}\,. \label{eq:J_eingesetzt}
 \end{equation}
-Die Faktoren \fax,\,\fjx,\,\fay,\,\fjy~und \fdr~stehen für Gewichte, mit denen der Einfluss der jeweiligen Größe auf das Gütefunktional variiert werden kann. In dieser Formulierung, das heißt, wenn der Ruck in Längs- wie auch in Querrichtung berücksichtigt werden soll, müssen die Eingangsgrößen des Systems zum Erreichen der entsprechenden Systemordnung zu $\ve{u} = [j_x,\,\dot{\kappa}]^T$ gewählt werden und mit $\kappa$ muss die Krümmung als zusätzlicher Zustand mit der trivialen Bewegungsgleichung $\dot{\kappa} = \dot{\kappa}$ eingeführt werden. Der Zustandsvektor lautet dann $\ve{x} = [s_r,\,v,\,a_x,\,d_r,\,\psi_r,\,\kappa]^T$. Die Querbeschleunigung des Fahrzeugs lässt sich aus der Geschwindigkeit und der Kurvenkrümmung zu 
+Die Faktoren \fax,\,\fjx,\,\fay,\,\fjy~und \fdr~stehen für Gewichte, mit denen der Einfluss der jeweiligen Größe auf das Gütefunktional variiert werden kann. 
+
+\textbf{Hinweis:} In den Abbildungen des Ergebnisteils dieser Arbeit gilt immer die als Standardparametrierung der Gewichtungsfaktoren festgelegt Wahl von $\fjx = \fjy = \fax = \fay = \fdr = 1$, sofern nicht explizit andere Werte angegeben sind.
+ 
+In dieser Formulierung, das heißt, wenn der Ruck in Längs- wie auch in Querrichtung berücksichtigt werden soll, müssen die Eingangsgrößen des Systems zum Erreichen der entsprechenden Systemordnung zu $\ve{u} = [j_x,\,\dot{\kappa}]^T$ gewählt werden und mit $\kappa$ muss die Krümmung als zusätzlicher Zustand mit der trivialen Bewegungsgleichung $\dot{\kappa} = \dot{\kappa}$ eingeführt werden. Der Zustandsvektor lautet dann $\ve{x} = [s_r,\,v,\,a_x,\,d_r,\,\psi_r,\,\kappa]^T$. Die Querbeschleunigung des Fahrzeugs lässt sich aus der Geschwindigkeit und der Kurvenkrümmung zu 
 \begin{equation}
 	a_y = \kappa v^2 \label{eq:ay}
 \end{equation}
@@ -75,28 +79,28 @@ H(\ve{x},\ve{u},\ve{\lambda},t) = \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjx j_x^2 
 und aus Gleichung \eqref{eq:Adjdgl} wiederum folgen die \gls{DGL} für die adjungierten Zustände
 \begin{align}
 	\begin{split}
-		\dot{\lambda_1} &= -\Big(\frac{d_r\dkapparef\lambda_1v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} - \frac{\dkapparef\lambda_5v\cos{\psi_r}}{(1-d_r\kapparefofs)^2}\Big)
+		\dot{\lambda}_1 &= -\Big(\frac{d_r\dkapparef\lambda_1v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} - \frac{\dkapparef\lambda_5v\cos{\psi_r}}{(1-d_r\kapparefofs)^2}\Big)
 	\end{split} \label{eq:dlambda1}
 	\\[2ex]
 	\begin{split}
-		\dot{\lambda_2} &= -\Big(2\fay \kappa^2v^3 + 2\fjy\dot{\kappa}^2v^3 + 4\fjy\kappa^2a_x^2v + 6\fjy\dot{\kappa}\kappa a_xv^2 + ...\\
+		\dot{\lambda}_2 &= -\Big(2\fay \kappa^2v^3 + 2\fjy\dot{\kappa}^2v^3 + 4\fjy\kappa^2a_x^2v + 6\fjy\dot{\kappa}\kappa a_xv^2 + ...\\
 		&\qquad ... + \frac{\lambda_1\cos{\psi_r}}{1-d_r\kapparefofs} + \lambda_4\sin{\psi_r} + \lambda_5(\kappa - \frac{\kapparefofs \cos{\psi_r}}{1-d_r\kapparefofs})\Big)
 	\end{split} \label{eq:dlambda2}
 	\\[2ex]
 	\begin{split}
-		\dot{\lambda_3} &= -\Big(\fax a_x + 4\fjy\kappa^2a_xv^2 + 2\fjy\dot{\kappa}\kappa v^3 + \lambda_2 \Big)
+		\dot{\lambda}_3 &= -\Big(\fax a_x + 4\fjy\kappa^2a_xv^2 + 2\fjy\dot{\kappa}\kappa v^3 + \lambda_2 \Big)
 	\end{split} \label{eq:dlambda3}
 	\\[2ex]
 	\begin{split}
-		\dot{\lambda_4} &= -\Big(\fdr d_r + \frac{\kapparefofs\lambda_1v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} -\frac{\kapparefofs^2\lambda_5v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} \Big)
+		\dot{\lambda}_4 &= -\Big(\fdr d_r + \frac{\kapparefofs\lambda_1v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} -\frac{\kapparefofs^2\lambda_5v\cos{\psi_r}}{(1-d_r\kapparefofs)^2} \Big)
 	\end{split} \label{eq:dlambda4}
 	\\[2ex]
 	\begin{split}
-		\dot{\lambda_5} &= -\Big(\lambda_4v\cos{\psi_r} - \frac{\lambda_1v\sin{\psi_r}}{1-d_r\kapparefofs} + \frac{\kapparefofs\lambda_5v\sin{\psi_r}}{1-d_r\kapparefofs}\Big)
+		\dot{\lambda}_5 &= -\Big(\lambda_4v\cos{\psi_r} - \frac{\lambda_1v\sin{\psi_r}}{1-d_r\kapparefofs} + \frac{\kapparefofs\lambda_5v\sin{\psi_r}}{1-d_r\kapparefofs}\Big)
 	\end{split} \label{eq:dlambda5}
 	\\[2ex]
 	\begin{split}
-		\dot{\lambda_6} &= -\Big(\fay\kappa v^4 + 4\fjy\kappa ax^2v^2 + 2\fjy \dot{\kappa}a_xv^3 + \lambda_5v \Big)\,.
+		\dot{\lambda}_6 &= -\Big(\fay\kappa v^4 + 4\fjy\kappa ax^2v^2 + 2\fjy \dot{\kappa}a_xv^3 + \lambda_5v \Big)\,.
 	\end{split} \label{eq:dlambda6}
 \end{align}
 Mit den \gls{DGL} der adjungierten Zuständen lautet das dynamische Gesamtsystem
@@ -110,7 +114,7 @@ Mit den \gls{DGL} der adjungierten Zuständen lautet das dynamische Gesamtsystem
 		\dot{s_r} & \dot{v} & \dot{a_x} & \dot{d_r} & \dot{\psi_r} & \dot{\kappa}
 		\end{bmatrix}^T\\
 		\begin{bmatrix}
-		\dot{\lambda_1} & \dot{\lambda_2} & \dot{\lambda_3} & \dot{\lambda_4} & \dot{\lambda_5} & \dot{\lambda_6}
+		\dot{\lambda}_1 & \dot{\lambda}_2 & \dot{\lambda}_3 & \dot{\lambda}_4 & \dot{\lambda}_5 & \dot{\lambda}_6
 		\end{bmatrix}^T
 	\end{bmatrix}\,.
 \end{equation}
