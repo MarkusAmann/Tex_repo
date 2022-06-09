@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.4142136"
-     inkscape:cx="534.21917"
-     inkscape:cy="559.32146"
+     inkscape:cx="534.21916"
+     inkscape:cy="615.88999"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-1928"
@@ -1081,7 +1081,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1987">$\vec{y}_g$</tspan></text>
+         id="tspan7537">$\vec{y}_g$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,385.91168,-146.73263)"
@@ -1089,7 +1089,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-8);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1989">$\vec{x}_g$</tspan></text>
+         id="tspan7539">$\vec{x}_g$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,466.84398,-256.60727)"
@@ -1097,7 +1097,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1991">$\vec{y}_f$</tspan></text>
+         id="tspan7541">$\vec{y}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,491.78797,-248.4049)"
@@ -1105,7 +1105,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-7);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1993">$\vec{x}_f$</tspan></text>
+         id="tspan7543">$\vec{x}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,568.9689,-308.55817)"
@@ -1113,7 +1113,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-78);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1995">$\vec{v}$</tspan></text>
+         id="tspan7545">$\vec{v}$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,474.76716,-198.6833)"
@@ -1121,7 +1121,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1997">$\vec{\textrm{n}}(s_r)$</tspan></text>
+         id="tspan7547">$\vec{n}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,539.57061,-183.80293)"
@@ -1129,7 +1129,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-4);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan1999">$\vec{\textrm{t}}(s_r)$</tspan></text>
+         id="tspan7549">$\vec{t}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,584.23412,-174.24194)"
@@ -1137,7 +1137,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2001">$\mathcal{R}$</tspan></text>
+         id="tspan7551">$\mathcal{R}$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,518.26624,-145.86458)"
@@ -1145,7 +1145,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2003">$1/\kappa_{\textrm{ref}}(s_r)$</tspan></text>
+         id="tspan7553">$1/\kappa_{\textrm{ref}}(s_r)$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,507.90634,-170.7495)"
@@ -1153,7 +1153,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-3);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2005">$s_r$</tspan></text>
+         id="tspan7555">$s_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,496.4089,-217.24523)"
@@ -1161,7 +1161,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-3-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2007">$d_r$</tspan></text>
+         id="tspan7557">$d_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,504.20979,-180.7524)"
@@ -1169,7 +1169,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2009">$\mathcal{P}_r$</tspan></text>
+         id="tspan7559">$\mathcal{P}_r$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,475.80286,-238.18343)"
@@ -1177,7 +1177,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-1);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2011">$\mathcal{P}_f$</tspan></text>
+         id="tspan7561">$\mathcal{P}_f$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,547.98936,-282.55955)"
@@ -1185,7 +1185,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2013">$\psi$</tspan></text>
+         id="tspan7563">$\psi$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,534.87415,-169.21771)"
@@ -1193,7 +1193,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6-7);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2015">$\psi_{\textrm{ref}}$</tspan></text>
+         id="tspan7565">$\psi_{\textrm{ref}}$</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.27001378,0,0,0.26998463,531.46393,-268.24621)"
@@ -1201,7 +1201,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-6-5-6-5);stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2017">$\psi_r$</tspan></text>
+         id="tspan7567">$\psi_r$</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-0-4)"
        d="m 163.15567,137.816 c 10.71588,-2.66196 21.47514,-5.33469 32.21274,-8.00205"
@@ -1215,7 +1215,7 @@
        style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;white-space:pre;shape-inside:url(#rect41188-99);display:inline;stroke-width:0.979941"><tspan
          x="-1263.209"
          y="1157.5107"
-         id="tspan2019">$0$</tspan></text>
+         id="tspan7569">$0$</tspan></text>
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.6;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-0-4-3)"
        d="m 163.01727,137.75896 c -2.56754,-9.83909 -5.14553,-19.71822 -7.7183,-29.57735"

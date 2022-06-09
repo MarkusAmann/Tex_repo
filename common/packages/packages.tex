@@ -12,6 +12,11 @@
 %%%%%%%%%%%%%%%%%%%
 \usepackage{tikz}				% Zum Erzeugen von Bildern mit TikZ
 \input{Bilder/TikZ_BSBnormal.tex} % rtm-eigene Bibliothek für Blockschaltbilder
+\usetikzlibrary{calc}
+\definecolor{mycolor}{RGB}{233, 80, 62}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
 
 %%%%%%%%%%%%%%%%%%%
 % Plotten direkt in LaTeX
