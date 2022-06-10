@@ -57,7 +57,7 @@ Nachdem die Systemdynamik in Frenet-Koordinaten und die Beschreibung der Referen
 
 Die als komfortrelevant erachtete Reisezeit kann über die freie Endzeit $t_f$ des Gütefunktionals berücksichtigt werden und wird dabei als Teil der Endkosten \Vofxoftf~bestraft. Dadurch wird das Optimierungsziel im Sinne einer kürzeren Reisezeit schneller erreicht. Zudem werden die Größen Quer- und Längsbeschleunigung sowie Quer- und Längsruck bestraft, da diese den Fahrkomfort der \GenderPl{Fahrzeuginsass} maßgeblich beeinflussen. Um zu gewährleisten, dass sich das Fahrzeug immer nahe der Referenzkurve befindet, wird zusätzlich die Querabweichung $d_r$ bestraft. Somit ergibt sich das verwendete Gütefunktional zu
 \begin{equation}
-	J(\xoft,\uoft,t,t_f) = t_f + \int_{t_0}^{t_f} \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fay a_y^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fdr d_r^2~\dtint{t}\,. \label{eq:J_eingesetzt}
+	J(\xoft,\uoft,t,t_f) = t_f + \frac{1}{2}\int_{t_0}^{t_f} \fax a_x^2 + \fjx j_x^2 + \fay a_y^2 + \fjy j_y^2 + \fdr d_r^2~\dtint{t}\,. \label{eq:J_eingesetzt}
 \end{equation}
 Die Faktoren \fax,\,\fjx,\,\fay,\,\fjy~und \fdr~stehen für Gewichte, mit denen der Einfluss der jeweiligen Größe auf das Gütefunktional variiert werden kann. 
 
