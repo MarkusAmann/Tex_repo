@@ -1,7 +1,7 @@
 \chapter{Analyse verschiedener Fahrszenarien und Interpretation des Lösungsraumes}\label{cha:Ergebnisse}
 In diesem Kapitel wird das im vorangegangenen Kapitel hergeleitete Gesamtsystem mit den Methoden aus Kapitel \ref{cha:Optimierung} für verschiedene Fahrszenarien gelöst. Dazu werden zunächst einige Vereinfachungen getroffen, mit denen es teilweise möglich ist, eine analytische Lösung zu finden. Die Erkenntnisse der einfacheren Szenarien werden dann verwendet, um die Lösungen komplexerer Szenarien zu interpretieren. 
 
-\section{Geradeausfahrt}
+\section{Geradeausfahrt}\label{sec:Geradeausfahrt}
 Als erstes wird das Szenario einer reinen Geradeausfahrt betrachtet. Dazu wird das Fahrzeugmodell auf die Bewegung in longitudinaler Richtung reduziert und angenommen, dass sich das Fahrzeug exakt auf der Referenzkurve mit $\kapparefofs = 0$ bewegt -- die querdynamischen Größen $d_r, \psi_r$ und $\kappa$ werden dabei vernachlässigt. Da sich das Fahrzeug auf der Referenzkurve befindet, ist durch $s_r$ die exakt vom Fahrzeug zurückgelegte Strecke gegeben. Die Systemdynamik des Fahrzeugs ist dann durch die Gleichungen 
 \begin{align}
 \dot{s}_r &= v \\
@@ -281,14 +281,14 @@ Bei der menschlichen Planung hingegen lässt sich das \gls{OP}, welches das selb
 \end{equation}
 Die Teilprobleme $J_1$ und $J_2$ lassen sich dabei wie folgt formulieren:
 	\begin{align}
-	J_1(\ve{x},\ve{u},t,t_1) &= t_1 + \int_{t_0}^{t_1}\frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2~\dtint{t} \\
-	\textrm{u.B.v.} \quad \xoftzero &= \xzero \\
-	s_r(t_1) &= s_1 
+	\min_{\ve{u}} \quad & J_1(\ve{x},\ve{u},t,t_1) = t_1 + \int_{t_0}^{t_1}\frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2~\dtint{t} \\
+	\textrm{u.B.v.} \quad & \xoftzero = \xzero \\
+	& s_r(t_1) = s_1 
 	\end{align}
 	\begin{align}
-	J_2(\ve{x},\ve{u},t,t_f) &= (t_f - t_1) + \int_{t_1}^{t_f}\frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2~\dtint{t} \\
-	\textrm{u.B.v.} \quad \xoftone &= \ve{x}_1 \\
-	s_r(t_f) &= s_f 
+	\min_{\ve{u}} \quad & J_2(\ve{x},\ve{u},t,t_f) = (t_f - t_1) + \int_{t_1}^{t_f}\frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2~\dtint{t} \\
+	\textrm{u.B.v.} \quad & \xoftone = \ve{x}_1 \\
+	& s_r(t_f) = s_f 
 	\end{align}
 Diese lassen sich getrennt voneinander lösen und anschließend zur Lösung des Gesamtproblems zusammensetzen. Die Gesamtzeit wird in dieser Art der Problemformulierung also dadurch berücksichtigt, dass die Zeiten der beiden Teilprobleme optimiert werden, wobei das Fahrzeugverhalten für $t>t_1$ im ersten Teilproblem nicht berücksichtigt werden kann und umgekehrt. Der Anfangszustand $\ve{x}_1$ des zweiten Teilproblems entspricht der Lösung des ersten Teilproblems zum Zeitpunkt $t_1$.
 
@@ -319,7 +319,7 @@ Bei der Analyse des Spurwechsels werden nachfolgend zwei unterschiedliche Modell
 \subsection{Formulierung des Optimierungsproblems}\label{subsec:Gütefunktional_Spurwechsel}
 Zunächst wird die Problemformulierung und das daraus resultierende Gütefunktional für die detailliertere Modellbeschreibung erläutert. Der Spurwechsel lässt sich ähnlich wie das zuvor analysierte Ampel-Szenario durch eine Geradeausfahrt mit einer internen \gls{GNB} beschreiben und kann daher wieder in zwei Abschnitte unterteilt werden. Zusätzlich kommt beim Spurwechsel jedoch noch eine Parameteränderung hinzu, die über eine Diskontinuität in der Systembeschreibung berücksichtigt werden kann, wobei die Diskontinuität streng genommen nicht die eigentlich Fahrzeugdynamik betrifft, sondern das Gütefunktional und damit die adjungierten \gls{DGL} verändert. Das \gls{OP} lässt sich wie folgt formulieren:
 \begin{align}
-J(\ve{x},\ve{u},t,t_1) &= t_f + \int_{t_0}^{t_f}\frac{1}{2}\fdr(d_r - d_{\textrm{off}})^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fay a_y^2~\dtint{t} \\
+\min_{\ve{u}} \quad J(\ve{x},\ve{u},t,t_1) &= t_f + \int_{t_0}^{t_f}\frac{1}{2}\fdr(d_r - d_{\textrm{off}})^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fay a_y^2~\dtint{t} \\
 \textrm{u.B.v.} \quad \xoftzero &= \xzero \\
 s_r(t_1) &= s_1 \\
 s_r(t_f) &= s_f \\
@@ -619,10 +619,69 @@ Der erzielte Komfortgewinn geschieht jedoch auf Kosten der Reisezeit und der Que
 %	\label{fig:svaj_klothoide_umax}
 %\end{figure} 
 \section{Gerade-Kurve-Gerade-Kombination}
-Als Abschluss der Analyse verschiedener Fahrszenarien sollen Gerade-Kurve-Gerade-Kombinationen untersucht werden. Diese Szenarien lassen sich durch Zusammensetzen mehrerer Teilszenarien beschreiben und es stehen dabei vor allem die Übergänge zwischen den einzelnen Teilszenarien im Fokus. Für die Untersuchung werden die unterschiedlichen zuvor eingeführten Möglichkeiten zur Betrachtung einer Kurvenfahrt verwendet und hinsichtlich des Fahrkomforts miteinander verglichen. Dabei handelt es sich um die folgenden alternativen Systembeschreibungen: 
-\begin{itemize}
+Als Abschluss der Analyse verschiedener Fahrszenarien sollen Gerade-Kurve-Gerade-Kombinationen untersucht werden. Dieses Szenario lässt sich durch Zusammensetzen mehrerer Teilszenarien beschreiben und es stehen dabei vor allem die Übergänge zwischen den einzelnen Teilszenarien im Fokus. Für die Untersuchung werden die unterschiedlichen zuvor eingeführten Möglichkeiten zur Betrachtung einer Kurvenfahrt verwendet und hinsichtlich des Fahrkomforts miteinander verglichen. Dabei handelt es sich um die folgenden alternativen Systembeschreibungen (nachfolgend als \glqq Fälle\grqq~bezeichnet): 
+\begin{enumerate}
 	\item Kreisfahrt mit konstanter Referenzkrümmung exakt auf der Referenzkurve, Fahrzeugmodell ohne Querdynamik.
 	\item Kreisfahrt mit konstanter Referenzkrümmung allgemein entlang der Referenzkurve, Fahrzeugmodell mit Querdynamik.
 	\item Kurvenfahrt mit streckenabhängiger Referenzkrümmung allgemein entlang der Referenzkurve, Fahrzeugmodell mit Querdynamik.
-\end{itemize}
-Die Kurve in der Mitte des Gesamtszenarios wird derart gewählt, dass eine Drehung um genau \valunit{360}{\degree} erzielt wird.
+\end{enumerate}
+\subsection{Formulierung des Optimierungsproblems}
+Die Kurve (bzw. der Kreis) in der Mitte des Gesamtszenarios wird derart gewählt, dass eine Drehung um genau \valunit{360}{\degree} erzielt wird. Für alle drei Fälle wird die gesamte zu durchfahrende Strecke zu $s_f = \valunit{500}{m}$ gewählt. Die Strecke der Kurve selbst kann durch die Integration der Referenzkrümmung über der Strecke bestimmt werden
+\begin{equation}
+	\dtint{s_{r,\textrm{Kurve}}} = \frac{1}{\kappa_{\textrm{ref}}(s_r)}\dtint{\psi_{ref}} \,. \label{eq:Kurvenstrecke}
+\end{equation}
+Im 3. Fall mit der klothoidenförmigen Kurve wird vor Beginn der Kurve eine Strecke von $s_1 = \valunit{100}{m}$ zurückgelegt. Dadurch, dass die Krümmung bei der Klothoide zunächst zunimmt und anschließend wieder abnimmt, entsteht eine Schleife deren Mittelpunkt gegenüber dem Kurvenanfang leicht in Richtung der $x_g$-Achse verschoben ist. Damit die Kurvenfahrt des 1. und 2. Falls mit dem 3. Fall vergleichbar ist, wird die Referenzkurve von Fall 1 und 2 so parametriert, dass der Kurvenmittelpunkt der Kreisfahrt auf einer Achse liegt mit dem Kurvenmittelpunkt der Klothoide. Dazu beträgt die Strecke, die vor Beginn der Kurve zurückgelegt wird, im 1. und 2. Fall $s_1 = \valunit{156{,}2538}{m}$. Die konstante Referenzkrümmung der Kreisfahrt wird mit $\kapparef = \valunit{0{,}0263}{\frac{\unit{1}}{\unit{m}}}$ derart gewählt, dass der am weitesten von der Geraden entfernte Punkt der Referenzkurve in allen drei Fällen identisch ist. Abbildung \ref{fig:gerade_kurve_gerade_xy_pos} zeigt die optimalen Trajektorien der drei Fälle sowie die Referenzkurven der Klothoide und der Kreisfahrt im globalen Koordinatensystem $\mathcal{F}_g$ aus der Vogelperspektive\footnote{Dadurch, dass die maximale seitliche Abweichung im 2. Fall mit $\valunit{37{,}05}{cm}$ gegenüber der Achsenskalierung gering ist, ist diese in Abbildung \ref{fig:gerade_kurve_gerade_xy_pos} kaum erkennbar, sodass es den Anschein erweckt, als würden die Verläufe von Fall 1 und 2 nahezu übereinander liegen.}. Die Abbildung verdeutlicht dabei die für die Parametrierung der Referenzkurve relevanten Zusammenhänge. 
+\begin{figure}[h] 
+	\centering
+	\includegraphics[width=0.7\linewidth]{./Bilder/Ergebnisse/Gerade_Kurve_Gerade/gerade_kurve_gerade_xy_pos.eps}
+	\caption{Trajektorien einer Gerade-Kurve-Gerade-Kombination für die drei unterschiedlichen Möglichkeiten zur Beschreibung des Szenarios aus der Vogelperspektive.}
+	\label{fig:gerade_kurve_gerade_xy_pos}
+\end{figure} 
+Da sich das Fahrzeug am Ende des Szenarios wieder in einer Geradeausfahrt befinden soll, werden zusätzlich die Endbedingungen $d_r(t_f) = \psi_r(t_f) = \kappa(t_f) = 0$ gewählt, während die Endgeschwindigkeit $v(t_f)$ und -beschleunigung $a_x(t_f)$ frei bleiben. Die Übergänge zwischen der Kurve und den Geradenabschnitten lassen sich mithilfe interner \gls{GNB} und diskontinuierlicher Systemdynamiken (siehe Abschnitte \ref{sec:InterneGNB} und \ref{sec:Diskontinuität}) beschreiben. Damit lässt sich das Gesamtszenario aus einzelnen Teilszenarien zusammensetzen, wobei die abschnittsweise gültige Systemdynamik hinsichtlich der Referenzkrümmung variiert. Für die Fälle 1 und 2 gilt 
+\begin{equation}
+\underbrace{\textrm{Gerade}}_{\kappa_{\textrm{ref}} = 0} \quad \rightarrow \quad \underbrace{\textrm{Kreis}}_{\kappa_{\textrm{ref}} = \textrm{konst.}} \quad \rightarrow \quad \underbrace{\textrm{Gerade}}_{\kappa_{\textrm{ref}} = 0} 
+\end{equation}
+und für den 3. Fall gilt 
+\begin{equation}
+\underbrace{\textrm{Gerade}}_{\kappa_{\textrm{ref}} = 0} \quad \rightarrow \quad \underbrace{\textrm{Kurvenanstieg}}_{\kappa_{\textrm{ref}} = \dkapparef (s_r-s_1)} \quad \rightarrow \quad \underbrace{\textrm{Kurvenabstieg}}_{\kappa_{\textrm{ref}} = -\dkapparef (s_r-2s_2+s_1)} \quad \rightarrow \quad \underbrace{\textrm{Gerade}}_{\kappa_{\textrm{ref}} = 0} \,.
+\end{equation}
+Wie man sieht, lässt sich die Gerade-Kurve-Gerade-Kombination der Fälle 1 und 2 durch insgesamt drei Teilszenarien beschreiben, während für den 3. Fall vier Teilszenarien benötigt werden, da die Krümmung der Klothoide nach der Hälfte der Kurve das Vorzeichen wechselt. Das \gls{OP} des Gesamtszenarios für die drei Systembeschreibungen unter Verwendung der jeweiligen Systemdynamik kann als
+\begin{align}
+\min_{\ve{u}} \quad J(\ve{x},\ve{u},t,t_f) &= t_f + \int_{t_0}^{t_f}\frac{1}{2}\fdr d_r^2 + \frac{1}{2}\fjx j_x^2 + \frac{1}{2}\fax a_x^2 + \frac{1}{2}\fjy j_y^2 + \frac{1}{2}\fay a_y^2~\dtint{t} \\
+\textrm{u.B.v.} \quad \xoftzero &= \xzero \\
+s_r(t_1) &= s_1 \\
+s_r(t_2) &= s_2 \\
+(s_r(t_3) &= s_3\,, \quad \textrm{gilt nur für 3. Fall}) \\
+s_r(t_f) &= s_f \\
+d_r(t_f) &= 0 \\
+\psi_r(t_f) &= 0 \\
+\kappa(t_f) &= 0
+\end{align}
+formuliert werden. Neben Gleichung \eqref{eq:Transversalitaet}, die aufgrund der freien Endzeit gilt, muss für die freien Endzustände Gleichung \eqref{eq:Lambdaend} gelten. An den internen Übergangsstellen zwischen den Geradenstücken und der Kurve wird weiterhin die Stetigkeit der Zustände gefordert und es gelten die erste und zweite Weierstraß-Erdmannsche-Eckenbedingung (siehe Gleichungen \eqref{eq:Stetigkeit_t1}--\eqref{eq:WeierstrassErdmann2}). Es sei angemerkt, dass die Bestrafungen der seitlichen Abweichung und des Querrucks für den Fall 1 ohne Querdynamik aus dem Gütefunktional wegfallen, da diese Größen in dieser Systembeschreibung nicht berücksichtigt werden können. Zudem wird die Querbeschleunigung in diesem Fall, wie bereits in Abschnitt \ref{subsec:Kreisfahrt_ohne_Querdynamik}, durch die Referenzkrümmung und die Fahrzeuggeschwindigkeit beschrieben. Für die Gewichtung der Gütekriterien wird die Standardparametrierung verwendet.
+\subsection{Optimale Trajektorien}
+Nachdem die Verläufe der drei Fälle bezüglich der jeweiligen Referenzkurve sowie die Formulierung des Optimierungsproblems erläutert wurden, sollen nachfolgend die optimalen Trajektorien der Längs- und Querdynamik analysiert werden. In Abbildung \ref{fig:gerade_kurve_gerade_lat_dyn} sind dazu die Trajektorien der Querdynamik dargestellt. Im Graph oben links ist die seitliche Abweichung $d_r$ von der Referenzkurve dargestellt (für die Fälle 2 und 3, da für den Fall 1 keine Querabweichung im Modell berücksichtigt wird). Es ist deutlich zu erkennen, dass das Fahrzeug im Übergang zwischen einem Geradenstück und der Kurve in beiden Fällen seitlich um die Referenzkurve schwingt, um die komfortrelevanten Gütekriterien in den Übergangspunkten -- insbesondere den Querruck -- gering zu halten. Dabei zeigt sich außerdem, dass die seitliche Abweichung unter Verwendung der Klothoide ein insgesamt niedrigeres Niveau hat, als bei der kreisförmigen Kurve, was auf die stetige Zu- bzw. Abnahme der Krümmung zurückzuführen ist. Der Graph oben rechts zeigt die optimalen Krümmungstrajektorien im Vergleich zur Referenzkrümmung. Dabei wird der Unterschied zwischen den Fällen 1/2 und 3 hinsichtlich der Referenzkrümmung deutlich -- in den Fällen 1 und 2 weist die Referenzkrümmung eine sprunghafte Änderung auf, während sie im 3. Fall linear an- und absteigt\footnote{Das lineare Verhalten der Krümmung im 3. Fall gilt bezüglich der zurückgelegten Strecke, allerdings ist im Graph in Abbildung \ref{fig:gerade_kurve_gerade_lat_dyn} der Zeitverlauf der Krümmung dargestellt, weshalb der lineare Zusammenhang nicht exakt zu erkennen ist.}. Da in der Systemdynamik des 1. Falls keine Querdynamik berücksichtigt ist, ist die \glqq optimale\grqq~ Krümmung in diesem Fall identisch zur Referenzkrümmung. Dadurch ändert sich auch der Verlauf der Querbeschleunigung im Übergangspunkt sprunghaft, wie im Graph unten links zu erkennen ist. Der dabei erreichte Maximalwert übersteigt den Wert in der Ruhelage \ayRL~deutlich. Die optimale Krümmungstrajektorie in Fall 2 ist der von Fall 1 ähnlich, allerdings wird die sprunghafte Änderung im Übergangspunkt dadurch kompensiert, dass die optimale Krümmung bereits deutlich vor bzw. nach der Änderung der Referenzkrümmung angepasst wird. Dies kann so interpretiert werden, dass das Fahrzeug bereits vor dem eigentlichen Kurveneintritt einlenkt, um die Querbeschleunigung und den -ruck zu minimieren. Dadurch ist die seitliche Abweichung von der Referenzkurve vergleichsweise groß. Im mittleren Bereich wird auch im 2. Fall der Wert der Referenzkurve in der Krümmung erreicht. Durch das beschriebene Lenkverhalten ist die maximale Querbeschleunigung in Fall 2 geringer, als in Fall 1.
+\begin{figure}[h] 
+	\centering
+	\includegraphics[width=\linewidth]{./Bilder/Ergebnisse/Gerade_Kurve_Gerade/lat_dyn.eps}
+	\caption{Trajektorien der Längsdynamik für die drei unterschiedlichen Möglichkeiten zur Beschreibung des Szenarios.}
+	\label{fig:gerade_kurve_gerade_lat_dyn}
+\end{figure}  
+Abgesehen vom veränderten Verlauf der Referenzkrümmung zeigen die Graphen oben links und oben rechts in Abbildung \ref{fig:gerade_kurve_gerade_lat_dyn} noch einen weiteren Unterschied zwischen den Fällen 2 und 3. Die seitliche Abweichung bei Verwendung der Klothoide ist deutlich geringer als in Fall 2 und auch die Abweichung zwischen der optimalen Krümmung und der Referenzkrümmung ist deutlich geringer als in Fall 2. Dies lässt sich damit begründen, dass die Ruckoptimalität, die in Fall 2 auf Kosten der Querabweichung erreicht wird, in der Klothoide bereits in der Referenzkurve berücksichtigt ist. Dadurch kann die optimale Trajektorie deutlich näher an der Referenzkurve selbst gefahren werden. Wie bereits in den vorherigen Abschnitten erläutert wurde, hängt die optimale Querbeschleunigung der (punktweisen) Ruhelage einer Kreis- bzw. Klothoidenfahrt ausschließlich von der Gewichtung der Querbeschleunigung ab. Dadurch ist auch in diesem Szenario gut zu erkennen, dass die Querbeschleunigung in allen drei betrachteten Fällen in der Mitte der Kurvenfahrt gegen \ayRL~verläuft. Der \glqq Hügel\grqq, der in Fall 3 auftaucht, ist darauf zurückzuführen, dass sich das Fahrzeug aufgrund der Krümmungsrampe in der Kurvenmitte kurzzeitig wieder von der punktweisen Ruhelage entfernt. Im Graph unten rechts in Abbildung \ref{fig:gerade_kurve_gerade_lat_dyn} sind schließlich die Verläufe des Querrucks gezeigt, wobei der Querruck im 1. Fall durch numerische Differentiation der Querbeschleunigung und in den Fällen 2 und 3 gemäß Gleichung \eqref{eq:jy} bestimmt wird. Die Ableitung des Sprungs in der Querbeschleunigung führt dabei theoretisch zu unendlich hohen Ruckwerten im 1. Fall. Vergleicht man Fall 2 und Fall 3 miteinander, so ist der Vorteil der Klothoide gegenüber der kreisförmigen Kurvenfahrt hinsichtlich des Querrucks deutlich zu erkennen, da dieser aufgrund der Beschaffenheit der Referenzkurve deutlich stärker reduziert werden kann, als bei der sprunghaften Änderung der Referenzkrümmung. In allen Fällen wird beim Kurvenaustritt der in Abschnitt \ref{subsubsec:Linearisierung} beschriebene Einfluss der instabilen Eigenmoden sichtbar, der dazu verwendet wird, das Fahrzeug aus der Ruhelage zurück in die Geradeausfahrt zu bringen.
+
+\begin{figure}[h] 
+	\centering
+	\includegraphics[width=\linewidth]{./Bilder/Ergebnisse/Gerade_Kurve_Gerade/svaj.eps}
+	\caption{Trajektorien der Längsdynamik für die drei unterschiedlichen Möglichkeiten zur Beschreibung des Szenarios.}
+	\label{fig:gerade_kurve_gerade_svaj}
+\end{figure}  
+Beim Blick auf die Größen der Längsdynamik, welche in Abbildung \ref{fig:gerade_kurve_gerade_svaj} gezeigt sind, fällt ein weiterer Vorteil der Kurve unter Verwendung einer Klothoide auf. Das Fahrzeug ist im 3. Fall um \valunit{2{,}82}{s} schneller, als im 2. Fall und um \valunit{3{,}27}{s} schneller, als im 1. Fall, obwohl die Gesamtstrecke in allen Szenarien identisch ist und die reine Kurvenstrecke, also die Strecke von Kurveneintritt bis Kurvenaustritt bei der Klothoide länger ist, als bei der Kreisfahrt. Für die Fälle 1 und 2 gilt gemäß Gleichung \eqref{eq:Kurvenstrecke} unter Verwendung der konstanten Referenzkrümmung $\kapparef = \valunit{0{,}0263}{\frac{\unit{1}}{\unit{m}}}$, dass die Kurvenstrecke 
+\begin{equation}
+	s_\textrm{Kurve} = s_2 - s_1 = \frac{2\pi}{\kappa_{\textrm{ref}}} = \valunit{238{,}5022}{m}
+\end{equation}
+beträgt. Für die Klothoide hingegen lässt sich die Kurvenstrecke durch zwei Halbkreise beschreiben und beträgt daher mit $A = 60$ gemäß Gleichung \eqref{eq:Kurvenstrecke}
+\begin{equation}
+s_\textrm{Kurve} = 2(s_2 - s_1) = 2\sqrt{\frac{2\pi}{\dkapparef}} = 2\sqrt{2\pi A^2} = \valunit{300{,}7954}{m}\,.
+\end{equation}
+Der beschriebene Zeitgewinn wird im Graph oben links in Abbildung \ref{fig:gerade_kurve_gerade_svaj} erkennbar und kann damit begründet werden, dass das Fahrzeug beim Durchfahren der Klothoide gegen Ende der Kurve bereits eine deutlich höhere Geschwindigkeit erreicht, wie im Graph oben rechts gezeigt ist. Der Verlauf der Geschwindigkeitstrajektorie von Fall 3 verdeutlicht dabei, dass die optimale Trajektorie in der Kurvendurchfahrt auch in diesem Szenario gegen die punktweise Ruhelage konvergiert. Die Geschwindigkeit der punktweisen Ruhelage der Klothoide ist jedoch krümmungsabhängig, wie in Abschnitt \ref{sec:Klothoide} gezeigt wurde, weshalb diese am Kurvenausgang aufgrund der abnehmenden Referenzkrümmung steigt. Es ist zwar auch zu erkennen, dass die optimale Kurvengeschwindigkeit in den Fällen 1 und 2 in der Kurve ebenfalls gegen die Ruhelage der Kreisfahrt konvergiert, allerdings ist diese aufgrund der konstanten Referenzkrümmung ebenfalls konstant und daher in jedem Punkt der Kurve identisch. Daher verbleibt die optimale Geschwindigkeit in den Fällen 1 und 2 längere Zeit auf dem niedrigeren Geschwindigkeitsniveau. Die unteren beiden Graphen in Abbildung \ref{fig:gerade_kurve_gerade_svaj} zeigen, dass das längsdynamische Verhalten in allen drei Fällen bis zum Kurveneintritt (nach \valunit{18{,}46}{s} bei Fall 1, nach \valunit{18{,}34}{s} bei Fall 2 und nach \valunit{12{,}28}{s} bei Fall 3) identisch ist und die Trajektorien der Längsbeschleunigung und des -rucks qualitativ die aus Abschnitt \ref{sec:Geradeausfahrt} bekannten Verläufe annehmen. Dabei lässt sich feststellen, dass auch die komfortrelevanten Größen in Längsrichtung positiv durch die Klothoide beeinflusst werden. Während die Geschwindigkeit in der Kreisfahrt gegen einen konstanten Wert konvergiert, der lange beibehalten wird und erst am Kurvenausgang unter vergleichsweise starker Änderung der Geschwindigkeit und der Beschleunigung wieder in der Geradeausfahrt mündet, sind die Änderungen der Geschwindigkeit und der Beschleunigung während der gesamten Klothoide zwar stetig, aber dafür vergleichsweise gering. Der Graph unten links zeigt dabei, dass die Beschleunigung innerhalb der Kurve in den Fällen 1 und 2 beinahe Null beträgt. Dieses Abbremsen ist nur unter Verwendung großer Ruckwerte in den Übergangspunkten möglich, wie der Graph unten rechts zeigt. Im Gegensatz dazu unterliegt die Kurvengeschwindigkeit in Fall 3 einer dauerhaften Änderung, was eine stetige Beschleunigung zur Folge hat. Dies wiederum bewirkt in der Kurve einen dauerhaften Längsruck ungleich Null, der jedoch auch an den Übergangspunkten deutlich geringere Werte aufweist und damit einen beträchtlichen Komfortgewinn bewirkt. 
+
+Als Abschluss dieses Kapitels lässt sich festhalten, dass sich die Ergebnisse der zum Teil stark vereinfachten Szenarien auch in der Zusammensetzung von Teilszenarien zu komplexeren Szenarien, wie der Gerade-Kurve-Gerade-Kombination, wiederfinden und daher zur Abschätzung der einzelnen Teilszenarien herangezogen werden können. Zudem konnte gezeigt werden, dass die Beschreibung einer Kurvenfahrt mithilfe einer Klothoide zwar komplizierter ist, aus Sicht des Fahrkomforts jedoch deutlich angenehmere Trajektorien liefert, als eine reine Kreisfahrt und auch hier die Erkenntnisse aus der Analyse der Kreisfahrt weiter verwendet werden können. 
